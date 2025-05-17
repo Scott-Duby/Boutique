@@ -6,7 +6,6 @@ import { toast, Toaster } from "sonner";
 import { useEffect } from "react";
 import { useBoutiqueStore } from "./Hooks/Store/UseBoutiqueStore";
 import { Heart } from "lucide-react";
-
 /**
  * The main application component.
  *
