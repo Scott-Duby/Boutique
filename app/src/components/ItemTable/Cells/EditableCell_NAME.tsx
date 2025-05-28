@@ -54,25 +54,25 @@ const EditableName:FC<CellContext<Item, unknown>> = ({getValue, row, table}) => 
             <DialogTrigger className='cursor-pointer hover:text-green-100'>
                 <Pencil size={20}/>    
             </DialogTrigger> 
-            <DialogContent className="text-center bg-gray-800 opacity-90">
+            <DialogContent className="text-centeropacity-90">
                 <DialogHeader>
-                <DialogTitle className="text-center text-gray-200">Edit {getValue<string>()}?</DialogTitle>
+                <DialogTitle className="text-center ">Edit {getValue<string>()}?</DialogTitle>
                 <form  className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                    <DialogDescription className="text-center text-gray-200">Are you sure you want to edit {getValue<string>()}?</DialogDescription>
+                    <DialogDescription className="text-center">Are you sure you want to edit {getValue<string>()}?</DialogDescription>
                     <form.Field name="name" children={( field ) => (
                         <div>
-                            <Label htmlFor="name" className="text-gray-200 m-0.5">Name</Label>
-                            <Input className="text-gray-200" id="name" type="text" value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} />
+                            <Label htmlFor="name" className=" m-0.5">Name</Label>
+                            <Input id="name" type="text" value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} />
                         </div>
                     )} />
                     <form.Field name="web_url" children={( field ) => (
                         <div>
-                            <Label htmlFor="web_url" className="text-gray-200 m-0.5">Web URL</Label>
-                            <Input className="text-gray-200" id="web_url" type="text" value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} />
+                            <Label htmlFor="web_url" className=" m-0.5">Web URL</Label>
+                            <Input className="" id="web_url" type="text" value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} />
                         </div>
                     )} />
-                    <Button className="text-gray-200 bg-green-600" onClick={form.handleSubmit}>Submit</Button>
-                    <Button className="m-2 text-gray-200" style={{backgroundColor: "#9c2828"}} onClick={() => {
+                    <Button type="submit" className="bg-chart-3 hover:bg-chart-2" onClick={form.handleSubmit}>Submit</Button>
+                    <Button className="m-2 bg-destructive hover:shadow-2xl" onClick={() => {
                         deleteName.mutate();
                     }}>Delete</Button>
                 </form>

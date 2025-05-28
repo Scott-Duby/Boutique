@@ -32,7 +32,6 @@ import { Item } from '@/types/Item';
 import { Bin } from '@/types/Bin';
 
 // Bin Management
-import { BinManager } from '@/components/BinEditor/BinManager';
 import { toast } from 'sonner';
 import Chart from '../Charts/Chart';
 
@@ -107,7 +106,6 @@ const ItemTable: React.FC<ItemTableProps> = () => {
                   }
 
                   const bin = row.original.bin;
-                  console.log(row.original)
                   if (!bin) {
                     return false; // Don't show rows with no bin assigned
                   }
@@ -197,34 +195,22 @@ const ItemTable: React.FC<ItemTableProps> = () => {
           {/* TODO: Fix this god damn piece of shit type error */}
           <Filters columnFilters={columnFilters} setColumnFilters={setColumnFilters} bins={bins} /> 
 
-          <Table className="border-gray-200 min-w-[1280px] min-h-[200px] max-h-[200px]">
+          <Table className="min-w-[1280px] min-h-[200px] max-h-[200px]">
             <ItemTableHeader table={table} />
             <ItemTableBody table={table} />
           </Table>
           <div className="flex space-x-2 mt-2 ">
-            <Button onClick={() => setBinOpen(true)} // Open the dialog
-              className="flex-1 font-medium cursor-pointer border-0 hover:bg-green-600 bg-gray-800"
-            >
-              <Archive /> Bins
-            </Button>
+
             <Button
-              className="flex-4/5 font-medium cursor-pointer border-0 hover:bg-green-600 bg-gray-800"
+              className="flex-2/5 font-medium cursor-pointer border-0 hover:bg-green-600"
               onClick={() => setCreateOpen(true)} // Open the dialog
             >
               <CirclePlus /> Items
             </Button>
-              <Button
-                className="font-medium cursor-pointer border-0 hover:bg-green-600 bg-gray-800"
-                onClick={() => setDataOpen(true)} // Open the dialog
-              >
-                <ChartColumnBig /> Data
-              </Button>
-              <Chart open={dataOpen} onOpenChange={setDataOpen}/>
           </div>
           <TablePaginator table={table} />
         </div>
       </div>
-      <BinManager open={binOpen} onOpenChange={setBinOpen} bins={bins} />
       <Dialog open={createOpen} onOpenChange={setCreateOpen}>
         <DialogContent
           style={{
@@ -235,10 +221,10 @@ const ItemTable: React.FC<ItemTableProps> = () => {
             display: "flex", // Use flexbox for layout
             flexDirection: "column", // Arrange children vertically
           }}
-          className='bg-gray-800 opacity-90'
+          className='opacity-90  -muted'
         >
           <DialogHeader>
-            <DialogTitle className='text-gray-200'>Create New Items</DialogTitle>
+            <DialogTitle>Create New Items</DialogTitle>
           </DialogHeader>
           <div className="overflow-y-auto h-full flex-1/2">
             <BulkCreate table={table} setState={setCreateOpen} />
