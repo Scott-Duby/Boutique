@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
+
 
 /**
  * Custom hook to handle the deletion of an item.

@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import axios from "axios";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
+
 
 export const useBulkCreate = (
     table: any,

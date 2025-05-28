@@ -49,9 +49,9 @@ const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column, t
         <DialogTrigger className="cursor-pointer hover:text-green-100"> 
           <Pencil size={20}/>
         </DialogTrigger>
-        <DialogContent className="text-center bg-gray-800 opacity-90">
+        <DialogContent className="text-center opacity-90">
           <DialogHeader>
-            <DialogTitle className="text-center text-gray-200">Edit Sold Status</DialogTitle>
+            <DialogTitle className="text-center">Edit Sold Status</DialogTitle>
             <form
               className="space-y-8"
               onSubmit={(e) => {
@@ -59,30 +59,30 @@ const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column, t
                 form.handleSubmit();
               }}
             >
-              <DialogDescription className="text-center text-gray-200">
+              <DialogDescription className="text-center ">
                 Are you sure you want to edit the sold status?
               </DialogDescription>
               <form.Field
                 name="sold"
                 children={(field) => (
                   <div className="flex flex-col items-center space-y-2">
-                    <Label htmlFor="sold" className="text-gray-200">Sold</Label>
+                    <Label htmlFor="sold" className="">Sold</Label>
                     <Select
                         value={field.state.value ? "Yes" : "No"}
                         onValueChange={(value) => field.setValue(value === "Yes")}
                     >
-                      <SelectTrigger className="w-[240px] text-gray-200" >
+                      <SelectTrigger className="w-[240px] " >
                         <SelectValue placeholder="Select status" />
                       </SelectTrigger>
-                      <SelectContent className="bg-gray-800 opacity-100">
-                        <SelectItem value="Yes" className="bg-green-600 hover:bg-green-500 mb-1">Yes</SelectItem>
-                        <SelectItem value="No" className="bg-red-500">No</SelectItem>
+                      <SelectContent className="opacity-100">
+                        <SelectItem value="Yes" className="bg-green-600 hover:bg-green-500 mb-1 focus:bg-green-500">Yes</SelectItem>
+                        <SelectItem value="No" className="bg-red-500 focus:bg-red-500">No</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                 )}
               />
-              <Button type="submit" className="mt-4 bg-green-600 text-gray-200 hover:bg-green-500">
+              <Button type="submit" className="mt-4 hover:bg-green-500">
                 Submit
               </Button>
             </form>

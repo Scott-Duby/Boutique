@@ -36,10 +36,10 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from ".
     });
   
     return (
-
+      
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="bg-gray-700 rounded-lg border-0 shadow-lg p-6">
-          <DialogHeader className="text-gray-200">Edit {activeBin.name}</DialogHeader>
+        <DialogContent className="rounded-lg border-0 shadow-lg p-6">
+          <DialogHeader className="">Edit {activeBin.name}</DialogHeader>
           <div className="flex justify-between">
           <form
             className="space-y-8"
@@ -50,14 +50,14 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from ".
               name="binName"
               children={(field) => (
                 <div>
-                  <Label htmlFor="bin_name" className="text-gray-200 m-0.5">
+                  <Label htmlFor="bin_name" className=" m-0.5">
                     Bin Name
                   </Label>
                   <Input
                     id="bin_name"
                     type="text"
                     placeholder="Enter bin name"
-                    className="text-gray-200 border-1 border-gray-500"
+                    className="border-1 "
                     value={field.state.value} // Bind the input value to the form state
                     onChange={(e) => field.setValue(e.target.value)} // Update the form state on change
                   />
@@ -70,18 +70,18 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from ".
               name="isFull"
               children={(field) => (
                 <div className="">
-                  <Label htmlFor="isFull" className="block text-sm font-medium text-gray-200 m-0.5">Full?</Label>
+                  <Label htmlFor="isFull" className="block text-sm font-medium m-0.5">Full?</Label>
                   <Select
                   value={field.state.value ? "Yes" : "No"}
                   onValueChange={(value) => field.setValue(value === "Yes")}
                   >
                     <SelectTrigger 
-                    className="w-[240px] text-gray-200">
+                    className="w-[240px] ">
                       <SelectValue placeholder="Select a value" />
                     </SelectTrigger>
-                    <SelectContent className=" w-[240px] bg-gray-800">
-                      <SelectItem value="Yes" className=" bg-green-500 mb-1">Yes</SelectItem>
-                      <SelectItem value="No" className=" bg-red-500">No</SelectItem>
+                    <SelectContent className=" w-[240px] ">
+                      <SelectItem value="Yes" className=" bg-green-500 mb-1 hover:bg-green-600 focus:bg-green-500">Yes</SelectItem>
+                      <SelectItem value="No" className=" bg-red-500 hover:bg-red-600 focus:bg-red-500">No</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

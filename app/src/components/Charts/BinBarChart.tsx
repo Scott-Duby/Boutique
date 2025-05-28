@@ -18,7 +18,7 @@ import {
             <XAxis dataKey="name" />
             <YAxis allowDecimals={false} />
             <Tooltip />
-            <Bar dataKey="itemCount" fill="#8884d8" />
+            <Bar dataKey="itemCount" fill="#f83e5e" />
           </BarChart>
         </ResponsiveContainer>
       </div>

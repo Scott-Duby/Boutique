@@ -90,49 +90,49 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
         className="space-y-4"
       >
         {items.map((item, index) => (
-          <div key={index} className="flex space-x-4 items-center bg-gray-700 p-4 shadow-md rounded-lg">
+          <div key={index} className="flex space-x-4 items-center p-4 shadow-xl rounded-md">
             {/* Item Name */}
             <div>
-              <label className="text-sm font-medium text-gray-200">Item Name</label>
+              <label className="text-sm font-medium  -foreground">Item Name</label>
               <input
                 type="text"
                 value={item.name}
                 onChange={(e) => updateItem(index, "name", e.target.value)}
                 placeholder="Enter item name"
-                className="rounded p-2 w-full text-gray-200 border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="rounded p-2 w-full   border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 required
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-gray-200">Web URL</label>
+              <label className="text-sm font-medium  -foreground">Web URL</label>
               <input
                 type="text"
                 value={item.web_url}
                 onChange={(e) => updateItem(index, "web_url", e.target.value)}
                 placeholder="Enter web URL"
-                className="rounded p-2 w-full text-gray-200 border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="rounded p-2 w-full   border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 required
               />
             </div>
   
             {/* Bin Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-gray-200">Bin</label>
+              <label className="block text-sm font-medium">Bin</label>
               <DropdownMenu>
                 <DropdownMenuTrigger 
-                className="border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400 rounded p-2 w-full text-left text-gray-200">
+                className="border-2 focus:outline-none focus:ring-2 rounded p-2 w-full text-left">
                   {item.binId
                     ? bins.find((bin) => bin.id === item.binId)?.name || "Select a Bin"
                     : "Select a Bin"}
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-gray-800 opacity-[95%] text-gray-200">
+                <DropdownMenuContent className="">
                   {bins.map((bin) => (
                     <DropdownMenuItem
                       key={bin.id}
                       onClick={() => updateItem(index, "binId", bin.id)}
-                      className="hover:bg-gray-600"
+                      className=""
                     >
-                      {bin.name} {bin.is_full && (<Badge className="bg-red-800">full</Badge>)}
+                      {bin.name} {bin.is_full && (<Badge className="red-800">full</Badge>)}
                     </DropdownMenuItem>
                   ))}
                   <DropdownMenuItem onClick={() => updateItem(index, "binId", null)}>
@@ -144,17 +144,16 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
   
             {/* Sold Dropdown */}
             <div>
-              <label className="block text-sm font-medium  text-gray-200">Sold</label>
+              <label className="block text-sm font-medium   ">Sold</label>
               <select
                 value={item.sold ? "yes" : "no"}
                 onChange={(e) => updateItem(index, "sold", e.target.value === "yes")}
-                className="text-gray-200 rounded p-2 w-full"
+                className=" rounded border-b-card-foreground border-2 p-2 w-full"
                 style={{
                   width: "100px", // Make the dropdown larger
                   height: "40px", // Increase height
                   padding: "8px", // Add padding
                   borderRadius: "0.375rem", // Rounded corners
-                  border: "1px solid #d1d5db", // Tailwind's border-gray-300
                 }}
               >
                 <option value="yes">Yes</option>
@@ -166,9 +165,9 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
             </div>
             <X
                 onClick={() => removeItem(index) }
-                className="text-red-500 cursor-pointer hover:text-red-400 border-gray-200 mt-4 "
-                style={{border: "1px solid red"}}
-                scale={10}
+                className="text-destructive cursor-pointer hover:text-red-400 mt-4"
+                scale={50}
+                fill="#f14444"
                />
           </div>
   
@@ -184,7 +183,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
             borderRadius: "0.375rem", // Tailwind's rounded
             marginRight: "5px",
           }}
-          className="hover:bg-gray-600 text-gray-200 bg-gray-800 shadow-gray-600 hover:shadow-gray-800 hover:shadow-lg shadow-md"
+          className="hover:shadow-lg shadow-md  input"
         >
           Add Item
         </Button>
@@ -192,7 +191,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
         {/* Submit Button */}
         <Button
           type="submit"
-          className="bg-green-500 hover:bg-green-400 "
+          className=" green-500 hover: green-400 "
           style={{
             color: "white", // Tailwind's text-white
             padding: "8px 16px", // Tailwind's px-4 py-2

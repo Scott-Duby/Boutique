@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "sonner"
 import { Bin } from "@/types/Bin";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
 
 export const useCreateBin = (setOpen: (open: boolean) => void) => {
     /**
@@ -19,11 +19,12 @@ export const useCreateBin = (setOpen: (open: boolean) => void) => {
             const { data } = await axios.post(
                 `http://${HOST}/v1/bins/create/${name}`
             )
-
             return data.data
         },
         onSuccess: (data: Bin) => {
-            toast.success("Bin created successfully", data)
+            toast.success("Bin created successfully", data);
+            
+            
             addBin(data) // Add the new bin to the store
         },
         onError: (error) => {

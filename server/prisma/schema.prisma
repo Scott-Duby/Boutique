@@ -12,8 +12,9 @@ model Bin {
   name    String  @db.VarChar(256)
   is_full Boolean @default(false)
   items Item[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt() @default(now())
 }
-
 
 model Item {
   id     Int     @id @default(autoincrement())
@@ -22,4 +23,6 @@ model Item {
   web_url String? @default("https://poshmark.com") @db.VarChar(256)
   bin   Bin? @relation(fields: [bin_id], references: [id], onDelete: SetNull)
   bin_id Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt() @default(now())
 }
