@@ -27,6 +27,6 @@ export interface BinReturnMessage {
       }
     | [];
   operationComplete: boolean;
-  errors: Error[] | "none" | Error | ValidationError[];
+  errors: Error[] | "none" | Error | ValidationError[] | "This route is depracated";
   status_code: number;
 }

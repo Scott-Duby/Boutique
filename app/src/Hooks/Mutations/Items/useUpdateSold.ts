@@ -3,7 +3,8 @@ import { toast } from "sonner";
 import axios from "axios";
 import { Item } from "@/types/Item";
 import { Table, Row, Column } from "@tanstack/react-table";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
+
 
 export const useUpdateSold = (
     row: Row<Item>,

@@ -55,7 +55,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) =
             <DialogTrigger className='underline hover:text-green-100 cursor-pointer'>
                 <Pencil size={20}/>
             </DialogTrigger>
-            <DialogContent className="text-center bg-gray-800 text-gray-200 opacity-90">
+            <DialogContent className="text-center opacity-90 ">
                 <DialogHeader>
                 <DialogTitle className="text-center">Edit {getValue<string>()}?</DialogTitle>
                 <form  className="space-y-8" onSubmit={(e) => {
@@ -65,7 +65,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) =
                 }>
                     <DialogDescription className="text-center">Are you sure you want to edit this field?</DialogDescription>
                     <form.Field name="bin" children={( field ) => (
-                        <div className='flex flex-col items-center text-gray-200'>
+                        <div className='flex flex-col items-center'>
                             <Label htmlFor="bin">Bin:</Label>
                             <Select value={field.state.value} onValueChange={(value) => {
                                 field.setValue(value); // Update the form value
@@ -75,7 +75,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) =
                                 <SelectTrigger className="w-[240px]">
                                     <SelectValue placeholder="Select a bin" />
                                 </SelectTrigger>
-                                <SelectContent className='bg-gray-800 opacity-90 text-gray-200'>
+                                <SelectContent className=' opacity-90'>
                                     {bins.map((bin) => (
                                         <SelectItem key={bin.id} value={bin.name}>{bin.name}</SelectItem>
                                     ))}
@@ -85,7 +85,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) =
                         </div>
                     )} />
                     <div className='flex justify-center'>
-                        <Button type="submit" className='ml-1 mr-1 shadow-2xl bg-green-600 hover:bg-green-500' style={{border: "1px solid black"}}>Submit</Button>
+                        <Button type="submit" className='ml-1 mr-1 shadow-2xl cursor-pointer hover:shadow-md' style={{border: "1px solid black"}}>Submit</Button>
                     </div>
 
                 </form>

@@ -1,34 +1,31 @@
 import { useQueries } from "@tanstack/react-query";
 import axios from "axios";
-import ItemTable from "./components/ItemTable/ItemTable";
-import TableSkeleton from "./components/ItemTable/TableSkeleton";
+import ItemTable from "../components/ItemTable/ItemTable";
+import TableSkeleton from "../components/ItemTable/TableSkeleton";
 import { toast, Toaster } from "sonner";
 import { useEffect } from "react";
-import { useBoutiqueStore } from "./Hooks/Store/UseBoutiqueStore";
+import { useBoutiqueStore } from "../Hooks/Store/UseBoutiqueStore";
 import { Heart } from "lucide-react";
-/**
- * The main application component.
- *
- * This component fetches item and bin data, handles loading and error states,
- * and renders the ItemTable within a BinContext provider.  It also displays
- * toast notifications for errors and a footer.
- *
- * @returns JSX.Element - The rendered application component.
- */
+import { createFileRoute } from "@tanstack/react-router";
+// Removed incomplete import
+
+export const Route = createFileRoute('/')({
+  component: Index,
+});
+
 export const HOST: string = import.meta.env.VITE_API_HOST;
 
-function App() {
+function Index() {
+  // Move hook logic outside of return
   const results = useQueries({
     queries: [
       {
         queryKey: ["getItems"],
         queryFn: async () => {
           const { data } = await axios.get(`http://${HOST}/v1/items`);
-
           if (!data.items) {
             throw new Error("Invalid response structure from /v1/items");
           }
-
           return data.items;
         },
       },
@@ -41,6 +38,7 @@ function App() {
       },
     ],
   });
+
   // Load State
   const setBins = useBoutiqueStore((state) => state.setBins);
   const setItems = useBoutiqueStore((state) => state.setItems);
@@ -80,29 +78,21 @@ function App() {
   }, [getItems.data]);
 
   return (
-    <div className="bg-gray-800 text-gray-200 min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen min-w-screen flex flex-col items-center bg-background justify-center">
       {getItems.isLoading || getBins.isLoading ? (
         <TableSkeleton />
-      ) : getItems.isError || getItems.isError ? (
-        <div className="text-red-500">
+      ) : getItems.isError || getBins.isError ? (
+        <div className="text-destructive">
           Failed to load data. Please try again later.
         </div>
       ) : (
-        <div className="w-full max-w-[1400px] max-h-[600px] p-4 bg-gray-700 rounded-lg shadow-lg">
+        <div className="w-full max-w-[1400px] max-h-[600px] p-4 bg-popover shadow-2xl rounded-lg">
           <ItemTable />
         </div>
       )}
 
       <div className="flex flex-col align-middle items-center justify-center mt-8">
-        <Toaster
-          toastOptions={{
-            style: {
-              backgroundColor: "#1f2937",
-              color: "#e5e7eb",
-            },
-          }}
-        />
-        <footer className="relative text-sm text-gray-400 mt-4">
+        <footer className="relative text-sm mt-4">
           Made with{" "}
           <Heart
             className="inline mb-1"
@@ -116,5 +106,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

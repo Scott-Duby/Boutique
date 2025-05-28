@@ -91,24 +91,24 @@ export function Filters({ columnFilters, setColumnFilters }: IFiltersProps) {
   };
 
   return (
-    <div className="flex items-center space-x-4 p-4 bg-muted rounded-md">
+    <div className="flex items-center space-x-4 p-4 rounded-md">
       <Input
         type="text"
         placeholder="Search items..."
         value={name}
         onChange={(e) => onFilterChange("name", e.target.value)}
-        className="flex-grow text-gray-200 bg-gray-800"
+        className="flex-grow bg-primary shadow-md placeholder:text-foreground"
       />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Funnel className="cursor-pointer text-yellow-500 border-yellow-500 hover:text-white" size={30} strokeWidth={1.5} />
+          <Funnel className="cursor-pointer text-primary hover:text-accent" fill="#f14444" size={30} strokeWidth={1.5} />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="p-4 w-64 bg-gray-800 opacity-90 text-gray-200">
-          <div className="flex flex-col space-y-2">
+        <DropdownMenuContent className="p-2 w-64 opacity-90">
+          <div className="flex flex-col space-y-1 m-4">
             {Array.isArray(bins) && bins.map((bin) => (
-              <div key={bin.id} className="flex items-center space-x-2 border-gray-600 m-2">
+              <div key={bin.id} className="flex items-center space-x-2 m-2 border-b-ring  border-b-2">
                 <Checkbox
-                  className="cursor-pointer w-5 h-5"
+                  className="cursor-pointer w-5 h-5 bg-foreground mb-1"
                   checked={selectedBins.some((selectedBin) => selectedBin.id === bin.id)}
                   onCheckedChange={() => toggleBinSelection(bin)}
                   id={`bin-${bin.id}`}
@@ -117,7 +117,7 @@ export function Filters({ columnFilters, setColumnFilters }: IFiltersProps) {
               </div>
             ))}
             <Button
-              className="bg-red-400 cursor-pointer hover:bg-red-500"
+              className="bg-destructive cursor-pointer hover:opacity-80"
               onClick={() => {
                 setColumnFilters((prev) => prev.filter((filter) => filter.id !== "bin_name")); // Remove only the bin_name filter
               }}

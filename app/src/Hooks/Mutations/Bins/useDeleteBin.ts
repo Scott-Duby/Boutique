@@ -3,7 +3,8 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
+
 
 export const useDeleteBin = () => {
   /**

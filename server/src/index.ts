@@ -8,7 +8,7 @@ const main = async () => {
   const app = express();
   const port = 3000;
 
-  app.use(morgan("dev"))
+  app.use(morgan("dev"));
   app.use(express.json());
   app.use(cors({
     origin: "*",

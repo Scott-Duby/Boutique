@@ -26,17 +26,17 @@ export const ItemTableBody: React.FunctionComponent<ITableBodyProps> = ({ table 
     <TableBody >
       {table.getRowModel().rows.length === 0 && (
         <TableRow>
-          <TableCell colSpan={table.getAllColumns().length} className='text-center text-gray-200 border-gray-500 bg-gray-800'>
+          <TableCell colSpan={table.getAllColumns().length} className='text-center'>
             <h1 className='text-2xl underline'>No Items Found</h1>
-            <p className='text-gray-400'>Try changing the filters or adding new items.</p>
+            <p className=''>Try changing the filters or adding new items.</p>
           </TableCell>
         </TableRow>
       )}
       {table.getRowModel().rows.length > 0 &&
         table.getRowModel().rows.map(row =>
-          <TableRow key={row.id} className='hover:bg-gray-700 bg-gray-800 border text-left text-gray-200 border-gray-500'>
+          <TableRow key={row.id} className='text-left'>
             {row.getVisibleCells().map(cell =>
-              <TableCell className='hover:bg-gray-700 bg-gray-800 border text-left text-gray-200 border-gray-500' key={cell.id} >
+              <TableCell key={cell.id} >
                 {
                   flexRender(
                     cell.column.columnDef.cell,

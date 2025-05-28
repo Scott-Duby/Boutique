@@ -6,7 +6,8 @@ import axios from "axios";
 import { Row } from "@tanstack/react-table";
 import { toast } from "sonner";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/App";
+import { HOST } from "@/routes/index";
+
 
 export const useEditBin = (
     setOpen: (value: boolean) => void,

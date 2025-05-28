@@ -1,7 +1,12 @@
 import express from "express";
-import BinsRouter from "./bins.router";
-import ItemsRouter from "./items.router";
-import { PoshRouter } from "./posh.router";
+
+import BinsRouter from "./Bins/bins.router";
+import "./Bins/bins.router.get"
+import "./Bins/bins.router.patch"
+
+import ItemsRouter from "./Items/items.router";
+import "./Items/items.router.patch";
+import "./Items/items.router.get"
 
 const RouteHandler = express.Router();
 
@@ -19,7 +24,6 @@ RouteHandler.use((_, __, next) => {
 });
 RouteHandler.use("/bins", BinsRouter);
 RouteHandler.use("/items", ItemsRouter);
-RouteHandler.use("/posh", PoshRouter);
 
 export default RouteHandler;
 
