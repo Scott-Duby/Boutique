@@ -81,15 +81,17 @@ function Home() {
   }, [getItems.data]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background justify-center">
+    <div className="min-h-screen flex flex-col items-center">
       {getItems.isLoading || getBins.isLoading ? (
-        <TableSkeleton />
+        <div className='flex items-center min-h-screen min-w-screen justify-center'> 
+          <TableSkeleton />
+        </div>
       ) : getItems.isError || getBins.isError ? (
         <div className="text-destructive">
           Failed to load data. Please try again later.
         </div>
       ) : (
-        <div>
+        <div className='min-w-screen'>
           <Navbar />
           <hr className="text-accent mb-1"/>
           <Outlet />  

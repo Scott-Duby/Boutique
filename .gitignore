@@ -27,3 +27,5 @@ package-lock.json
 yarn.lock
 
 data
+
+routeTree.gen.ts

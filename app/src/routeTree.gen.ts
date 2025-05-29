@@ -11,11 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SettingsImport } from './routes/settings'
 import { Route as DataImport } from './routes/data'
 import { Route as BinsImport } from './routes/bins'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const SettingsRoute = SettingsImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const DataRoute = DataImport.update({
   id: '/data',
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataImport
       parentRoute: typeof rootRoute
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/settings': typeof SettingsRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/settings': typeof SettingsRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/settings': typeof SettingsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bins' | '/data'
+  fullPaths: '/' | '/bins' | '/data' | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bins' | '/data'
-  id: '__root__' | '/' | '/bins' | '/data'
+  to: '/' | '/bins' | '/data' | '/settings'
+  id: '__root__' | '/' | '/bins' | '/data' | '/settings'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BinsRoute: typeof BinsRoute
   DataRoute: typeof DataRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BinsRoute: BinsRoute,
   DataRoute: DataRoute,
+  SettingsRoute: SettingsRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/bins",
-        "/data"
+        "/data",
+        "/settings"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/data": {
       "filePath": "data.tsx"
+    },
+    "/settings": {
+      "filePath": "settings.tsx"
     }
   }
 }
