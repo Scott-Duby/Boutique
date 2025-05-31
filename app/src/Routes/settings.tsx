@@ -11,8 +11,8 @@ export interface ISettingProps {
 
 export function Settings ({ }: ISettingProps) {
   return (
-    <div>   
-        Hello World
+    <div className="flex align-middle justify-center">   
+        <h1 className="text-4xl mt-6 p-2">Coming Soon!</h1>
     </div>
   );
 }
