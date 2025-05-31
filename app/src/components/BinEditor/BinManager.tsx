@@ -29,7 +29,7 @@ import { Input } from "../@shadcn/ui/input";
     setSearchQuery(searchTerm) // Set the search query for filter function
     
     const filteredItems = bins.filter((bin) => // Filter 
-      bin.name.toLowerCase().includes(searchTerm.toLowerCase())
+      bin.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
     )
     setFilteredBins(filteredItems); // set filter items
   }
@@ -54,7 +54,7 @@ import { Input } from "../@shadcn/ui/input";
           <div className="grid grid-cols-5 grid-rows-4 gap-4 p-4">
             {/* Add New Bin Box */}
             <Button 
-              className="h-full w-full cursor-pointer col-span-1"
+              className="min-h-full min-w-full cursor-pointer col-span-1"
               onClick={() => setCreateBinOpen(true)}
             >
               <Plus size={100}/>
