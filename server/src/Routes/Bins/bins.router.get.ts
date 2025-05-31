@@ -32,7 +32,6 @@ BinsRouter.get(
         operationComplete: false,
       });
     }
-
     return res.status(payload.status_code).send(payload);
   },
 );
