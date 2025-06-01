@@ -14,7 +14,10 @@
 <img src="https://img.shields.io/github/last-commit/Scott-Duby/Boutique?estyle=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 <img src="https://img.shields.io/github/languages/top/Scott-Duby/Boutique?style=default&color=0080ff" alt="repo-top-language">
 <img src="https://img.shields.io/github/languages/count/Scott-Duby/Boutique?style=default&color=0080ff" alt="repo-language-count">
-
+<img src="https://img.shields.io/badge/Yarn-2C8EBB.svg?style=flat&logo=yarn&logoColor=white">
+<img src="https://img.shields.io/badge/Docker-2496ED.svg?style=flat&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/Node.js-339933.svg?style=flat&logo=node.js&logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/Prisma-2D3748.svg?style=flat&logo=prisma&logoColor=white" alt="Prisma">
 <!-- default option, no dependency badges. -->
 
 
@@ -103,7 +106,7 @@
 ### Project Index
 
 <details open>
-	<summary><b><code>BOUTIQUE.GIT/</code></b></summary>
+	<summary><b><code>BOUTIQUE</code></b></summary>
 	<!-- __root__ Submodule -->
 	<details>
 		<summary><b>__root__</b></summary>
@@ -141,33 +144,43 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.node.json'>tsconfig.node.json</a></b></td>
+					<td>Config for typescript</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/index.html'>index.html</a></b></td>
+					<td>HTML entry-point</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tailwind.config.js'>tailwind.config.js</a></b></td>
+					<td>Config for tailwind</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.app.json'>tsconfig.app.json</a></b></td>
+					<td>Config for app build entrypoint</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/Dockerfile'>Dockerfile</a></b></td>
+					<td>Config for Docker</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/package.json'>package.json</a></b></td>
+					<td>Config for node</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/components.json'>components.json</a></b></td>
+					<td>Config for ShadCN</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.json'>tsconfig.json</a></b></td>
+					<td>Config for typescript</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/eslint.config.js'>eslint.config.js</a></b></td>
+					<td>Config for ESLint</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/vite.config.ts'>vite.config.ts</a></b></td>
+					<td>Config for vite</td>
 				</tr>
 			</table>
 			<!-- src Submodule -->
@@ -185,18 +198,23 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/main.tsx'>main.tsx</a></b></td>
+							<td>Entry for React/Vite</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/utils.ts'>utils.ts</a></b></td>
+							<td>Provides merger utils for tailwind</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/index.css'>index.css</a></b></td>
+							<td>styles for tailwind / app-wide styles</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/vite-env.d.ts'>vite-env.d.ts</a></b></td>
+							<td>Types for Vite</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/routeTree.gen.ts'>routeTree.gen.ts</a></b></td>
+							<td>**GENERATED**| router logic</td>
 						</tr>
 					</table>
 					<!-- types Submodule -->
@@ -214,9 +232,11 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/types/Item.ts'>Item.ts</a></b></td>
+									<td>Types for Item</td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/types/Bin.ts'>Bin.ts</a></b></td>
+									<td>Types for Bin</td>
 								</tr>
 							</table>
 						</blockquote>
@@ -236,6 +256,7 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/Navbar.tsx'>Navbar.tsx</a></b></td>
+									<td>Navbar Component</td>
 								</tr>
 							</table>
 							<!-- Charts Submodule -->
@@ -928,8 +949,8 @@ Build Boutique.git from the source and intsall dependencies:
 
 3. **Install the dependencies:**
 
-<!-- SHIELDS BADGE CURRENTLY DISABLED -->
-	<!-- [![docker][docker-shield]][docker-link] -->
+
+ [[docker][docker-shield]][docker-link]
 	<!-- REFERENCE LINKS -->
 	<!-- [docker-shield]: https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white -->
 	<!-- [docker-link]: https://www.docker.com/ -->
@@ -962,23 +983,31 @@ Build Boutique.git from the source and intsall dependencies:
 	❯ yarn'
 	```
 
-### Usage
+## Create your docker environment
+ > Use the compose example to help format your file [compose.example.yaml]
 
-Run the project with:
+## Run the Project
 
-**Using [docker](https://www.docker.com/):**
+You can run the project using one of the following methods:
+
+### 🐳 Using [Docker](https://www.docker.com/)
 ```sh
-docker run -it {image_name}
+docker compose build
+docker compose up
 ```
-**Using [npm](https://www.npmjs.com/):**
+### 📦 Using npm
 ```sh
+npm install
 npm start
 ```
-**Using [yarn](None):**
-```sh
-echo 'INSERT-RUN-COMMAND-HERE'
-```
 
+[![Yarn](https://img.shields.io/badge/Yarn-2C8EBB.svg?style=flat&logo=yarn&logoColor=white)](https://yarnpkg.com/)
+
+### 🧶 Using yarn
+```sh
+yarn
+yarn start
+```
 ---
 
 ## Roadmap
@@ -1025,12 +1054,4 @@ echo 'INSERT-RUN-COMMAND-HERE'
 
 ## License
 
-Boutique.git is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-
-
----
+Boutique is protected under the [MIT](https://choosealicense.com/licenses/mit/) License. For more details, refer to the [MIT](https://choosealicense.com/licenses/mit) file.
