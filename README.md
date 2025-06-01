@@ -1042,16 +1042,16 @@ Build Boutique.git from the source and intsall dependencies:
 	```sh
 	❯ npm install
 	```
-<!-- SHIELDS BADGE CURRENTLY DISABLED -->
-	<!-- [![yarn][yarn-shield]][yarn-link] -->
-	<!-- REFERENCE LINKS -->
-	<!-- [yarn-shield]: None -->
-	<!-- [yarn-link]: None -->
+
+	[![yarn][yarn-shield]][yarn-link]
+	REFERENCE LINKS
+	[yarn-shield]: None -->
+	[yarn-link]: None -->
 
 	**Using [yarn](None):**
 
 	```sh
-	❯ echo 'INSERT-INSTALL-COMMAND-HERE'
+	❯ yarn'
 	```
 
 ### Usage
@@ -1071,32 +1071,19 @@ npm start
 echo 'INSERT-RUN-COMMAND-HERE'
 ```
 
-### Testing
-
-Boutique.git uses the {__test_framework__} test framework. Run the test suite with:
-
-**Using [npm](https://www.npmjs.com/):**
-```sh
-npm test
-```
-**Using [yarn](None):**
-```sh
-echo 'INSERT-TEST-COMMAND-HERE'
-```
-
 ---
 
 ## Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+- [X] **`Task 1`**: <strike>Ratelimits.</strike>
+- [ ] **`Task 2`**: Settings.
+- [ ] **`Task 3`**: Theming.
+- [ ] **`Task 4`**: Posh Scraper
 
 ---
 
 ## Contributing
 
-- **💬 [Join the Discussions](https://github.com/Scott-Duby/Boutique.git/discussions)**: Share your insights, provide feedback, or ask questions.
 - **🐛 [Report Issues](https://github.com/Scott-Duby/Boutique.git/issues)**: Submit bugs found or log feature requests for the `Boutique.git` project.
 - **💡 [Submit Pull Requests](https://github.com/Scott-Duby/Boutique.git/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
 
@@ -1125,15 +1112,6 @@ echo 'INSERT-TEST-COMMAND-HERE'
 8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
 </details>
 
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://github.com{/Scott-Duby/Boutique.git/}graphs/contributors">
-	  <img src="https://contrib.rocks/image?repo=Scott-Duby/Boutique.git">
-   </a>
-</p>
-</details>
 
 ---
 
@@ -1142,16 +1120,6 @@ echo 'INSERT-TEST-COMMAND-HERE'
 Boutique.git is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
 
 ---
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
-
-<div align="right">
-
-[![][back-to-top]](#top)
-
-</div>
 
 
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
