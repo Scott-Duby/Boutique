@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@tanstack/react-router": "^1.120.5",
-    "express-rate-limit": "^7.5.0"
-  }
-}
