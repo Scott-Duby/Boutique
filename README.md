@@ -10,10 +10,10 @@
 <em></em>
 
 <!-- BADGES -->
-<img src="https://img.shields.io/github/license/Scott-Duby/Boutique.git?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-<img src="https://img.shields.io/github/last-commit/Scott-Duby/Boutique.git?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/Scott-Duby/Boutique.git?style=default&color=0080ff" alt="repo-top-language">
-<img src="https://img.shields.io/github/languages/count/Scott-Duby/Boutique.git?style=default&color=0080ff" alt="repo-language-count">
+<img src="https://img.shields.io/github/license/Scott-Duby/Boutique?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+<img src="https://img.shields.io/github/last-commit/Scott-Duby/Boutiquestyle=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+<img src="https://img.shields.io/github/languages/top/Scott-Duby/Boutique?style=default&color=0080ff" alt="repo-top-language">
+<img src="https://img.shields.io/github/languages/count/Scott-Duby/Boutique?style=default&color=0080ff" alt="repo-language-count">
 
 <!-- default option, no dependency badges. -->
 
@@ -119,11 +119,9 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/compose.yaml'>compose.yaml</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 			</table>
 		</blockquote>
@@ -143,43 +141,33 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.node.json'>tsconfig.node.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/index.html'>index.html</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tailwind.config.js'>tailwind.config.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.app.json'>tsconfig.app.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/Dockerfile'>Dockerfile</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/components.json'>components.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/tsconfig.json'>tsconfig.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/eslint.config.js'>eslint.config.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/vite.config.ts'>vite.config.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 			</table>
 			<!-- src Submodule -->
@@ -197,23 +185,18 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/main.tsx'>main.tsx</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/utils.ts'>utils.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/index.css'>index.css</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/vite-env.d.ts'>vite-env.d.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/routeTree.gen.ts'>routeTree.gen.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 					</table>
 					<!-- types Submodule -->
@@ -231,11 +214,9 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/types/Item.ts'>Item.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/types/Bin.ts'>Bin.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 						</blockquote>
@@ -255,7 +236,6 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/Navbar.tsx'>Navbar.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 							<!-- Charts Submodule -->
@@ -273,11 +253,9 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/Charts/Chart.tsx'>Chart.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/Charts/BinBarChart.tsx'>BinBarChart.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 								</blockquote>
@@ -297,27 +275,21 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/ItemTable.tsx'>ItemTable.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/Filters.tsx'>Filters.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/ItemTableHeader.tsx'>ItemTableHeader.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/TableSkeleton.tsx'>TableSkeleton.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/ItemTableBody.tsx'>ItemTableBody.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/TablePaginator.tsx'>TablePaginator.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 									<!-- Cells Submodule -->
@@ -335,19 +307,15 @@
 											</thead>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/Cells/BulkCreate.tsx'>BulkCreate.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/Cells/EditableCell_SOLD.tsx'>EditableCell_SOLD.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/Cells/EditableCell_NAME.tsx'>EditableCell_NAME.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/ItemTable/Cells/EditableCell_BIN.tsx'>EditableCell_BIN.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 											</table>
 										</blockquote>
@@ -369,15 +337,12 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/BinEditor/EditBin.tsx'>EditBin.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/BinEditor/BinManager.tsx'>BinManager.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/BinEditor/CreateBin.tsx'>CreateBin.tsx</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 								</blockquote>
@@ -403,83 +368,63 @@
 											</thead>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/pagination.tsx'>pagination.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/popover.tsx'>popover.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/sheet.tsx'>sheet.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/label.tsx'>label.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/sonner.tsx'>sonner.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/accordion.tsx'>accordion.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/drawer.tsx'>drawer.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/switch.tsx'>switch.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/radio-group.tsx'>radio-group.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/dialog.tsx'>dialog.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/badge.tsx'>badge.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/table.tsx'>table.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/button.tsx'>button.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/checkbox.tsx'>checkbox.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/dropdown-menu.tsx'>dropdown-menu.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/select.tsx'>select.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/input.tsx'>input.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/skeleton.tsx'>skeleton.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/context-menu.tsx'>context-menu.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/components/@shadcn/ui/form.tsx'>form.tsx</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 											</table>
 										</blockquote>
@@ -503,7 +448,6 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/getItemsForTable.ts'>getItemsForTable.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 							<!-- Store Submodule -->
@@ -547,15 +491,12 @@
 											</thead>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Bins/useDeleteBin.ts'>useDeleteBin.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Bins/useCreateBin.ts'>useCreateBin.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Bins/useEditBinName.ts'>useEditBinName.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 											</table>
 										</blockquote>
@@ -575,23 +516,18 @@
 											</thead>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Items/useBulkCreate.ts'>useBulkCreate.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Items/useUpdateSold.ts'>useUpdateSold.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Items/useUpdateItemName.ts'>useUpdateItemName.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Items/useDeleteItem.ts'>useDeleteItem.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 												<tr style='border-bottom: 1px solid #eee;'>
 													<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Hooks/Mutations/Items/useEditItemBin.ts'>useEditItemBin.ts</a></b></td>
-													<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 												</tr>
 											</table>
 										</blockquote>
@@ -615,15 +551,12 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/lib/loadTableState.ts'>loadTableState.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/lib/utils.ts'>utils.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/lib/createItemTableMeta.ts'>createItemTableMeta.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 						</blockquote>
@@ -643,23 +576,18 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Routes/settings.tsx'>settings.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Routes/index.tsx'>index.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Routes/__root.tsx'>__root.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Routes/data.tsx'>data.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/app/src/Routes/bins.tsx'>bins.tsx</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 						</blockquote>
@@ -683,31 +611,24 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/Dockerfile'>Dockerfile</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/.prettierignore'>.prettierignore</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/tslint.json'>tslint.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/.prettierrc'>.prettierrc</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/tsconfig.json'>tsconfig.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/eslint.config.mjs'>eslint.config.mjs</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 				</tr>
 			</table>
 			<!-- prisma Submodule -->
@@ -805,11 +726,9 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/logger.ts'>logger.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/index.ts'>index.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 						</tr>
 					</table>
 					<!-- utils Submodule -->
@@ -827,15 +746,15 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/utils/BinPayloadBuilder.ts'>BinPayloadBuilder.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+									<td style='padding: 8px;'>Builds response messages for server</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/utils/ItemPayloadBuilder.ts'>ItemPayloadBuilder.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+									<td style='padding: 8px;'>Builds response messages for server</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/utils/FieldTypes.ts'>FieldTypes.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+									<td style='padding: 8px;'>Defines types</code></td>
 								</tr>
 							</table>
 							<!-- Interfaces Submodule -->
@@ -853,11 +772,9 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/utils/Interfaces/ItemReturnMessage.ts'>ItemReturnMessage.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/utils/Interfaces/BinReturnMessage.ts'>BinReturnMessage.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 								</blockquote>
@@ -879,7 +796,7 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/db/prisma.ts'>prisma.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+									<td style='padding: 8px;'>Prisma Init</code></td>
 								</tr>
 							</table>
 						</blockquote>
@@ -899,11 +816,9 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Controllers/bins.controller.ts'>bins.controller.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Controllers/items.controller.ts'>items.controller.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 						</blockquote>
@@ -923,7 +838,6 @@
 							</thead>
 								<tr style='border-bottom: 1px solid #eee;'>
 									<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/RouteHandlerV1.ts'>RouteHandlerV1.ts</a></b></td>
-									<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 								</tr>
 							</table>
 							<!-- Bins Submodule -->
@@ -941,15 +855,12 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Bins/bins.router.get.ts'>bins.router.get.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Bins/bins.router.ts'>bins.router.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Bins/bins.router.patch.ts'>bins.router.patch.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 								</blockquote>
@@ -969,15 +880,12 @@
 									</thead>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Items/items.router.get.ts'>items.router.get.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Items/items.router.ts'>items.router.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 										<tr style='border-bottom: 1px solid #eee;'>
 											<td style='padding: 8px;'><b><a href='https://github.com/Scott-Duby/Boutique.git/blob/master/server/src/Routes/Items/items.router.patch.ts'>items.router.patch.ts</a></b></td>
-											<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
 										</tr>
 									</table>
 								</blockquote>
@@ -1043,10 +951,10 @@ Build Boutique.git from the source and intsall dependencies:
 	❯ npm install
 	```
 
-	[![yarn][yarn-shield]][yarn-link]
-	REFERENCE LINKS
-	[yarn-shield]: None -->
-	[yarn-link]: None -->
+	<!-- [![yarn][yarn-shield]][yarn-link] -->
+	<!-- REFERENCE LINKS -->
+	<!-- [yarn-shield]: None -->
+	<!-- [yarn-link]: None -->
 
 	**Using [yarn](None):**
 
