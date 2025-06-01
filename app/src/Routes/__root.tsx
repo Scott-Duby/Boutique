@@ -58,6 +58,7 @@ function Home() {
         }`,
       );
     }
+
   }, [getItems.isError, getItems.error]);
   useEffect(() => {
     if (getBins.isError && getBins.error) {

@@ -11,12 +11,12 @@ export const showBanner = (port: number, app: express.Express) => {
 
   const logLines = getStartupLogBuffer()
     .map((line) => chalk.green('' + line))
-    .join('\n');
+    .join('');
 
   const routes = printRoutes(app)
 
   const msg = `
-   ${title}
+${title}
 
 ${chalk.bold('Available Routes:')}
 ${routes.join('\n')}

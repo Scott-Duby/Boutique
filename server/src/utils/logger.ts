@@ -1,28 +1,33 @@
-// src/utils/logger.ts
 import winston from 'winston';
 
 let startupLogBuffer: string[] = [];
 
-const formatLine = winston.format.printf(({ level, message }) => {
-  const line = `[${level.toUpperCase()}] ${message}`;
+// Colorize only the level (so timestamp/message stay clean)
+const colorizer = winston.format.colorize({ all: false });
+
+const customFormat = winston.format.printf(({ level, message, timestamp, stack }) => {
+  const levelColored = colorizer.colorize(level, `[${level.toUpperCase()}]`);
+  const logLine = `[${timestamp}] ${levelColored} ${stack || message}`;
   if (process.env.APP_STARTING === 'true') {
-    startupLogBuffer.push(line); // collect for banner
+    startupLogBuffer.push(logLine + "\n");
+    
   }
-  return line;
+  return logLine;
 });
 
 const logger = winston.createLogger({
   level: 'debug',
   format: winston.format.combine(
-    winston.format.colorize(),
-    formatLine
+    winston.format.errors({ stack: true }),
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    customFormat // <- put color after timestamp and formatting
   ),
   transports: [new winston.transports.Console()],
 });
 
-export const getStartupLogBuffer = () => {
+export const getStartupLogBuffer = (): string[] => {
   const logs = [...startupLogBuffer];
-  startupLogBuffer = []; // clear buffer after use
+  startupLogBuffer = [];
   return logs;
 };
 
