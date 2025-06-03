@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return jsonify(message="Welcome to the API")
+    return jsonify(message="Hello World") # <- TODO: Express server sends a request here. Response should be 200 or server will throw a warning
 
 @app.route('/scrape/<username>', methods=['GET'])
 def scrape(username):

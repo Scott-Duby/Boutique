@@ -43,12 +43,15 @@ def scrape_poshmark_with_selenium(username, getOnlyUnsold):
             details = card.select_one(".item__details") # Item Details
             brand = card.select_one(".tile__details__pipe__brand") # Item Brand
             sold_badge = card.select_one(".tile__covershot i span") # Sold?
+            web_url = card.select_one("a").get("href") # Sold?
+
 
             name_text = name.text.strip() if name else ""
             details_text = details.text.strip() if details else ""
             brand_text = brand.text.strip() if brand else ""
             isSold = sold_badge is not None
             isNWT = "NWT" in card.text # Check if item is NWT
+            web_url = web_url if web_url else ""
             size = ""
             if "Size:" in details_text:
                 try:
@@ -61,7 +64,8 @@ def scrape_poshmark_with_selenium(username, getOnlyUnsold):
                 "size": size,
                 "brand": brand_text,
                 "isSold": isSold,
-                "isNWT": isNWT
+                "isNWT": isNWT,
+                "web_url": "https://poshmark.com" + web_url
             })
         if(getOnlyUnsold == True):
             listings = [listing for listing in listings if not listing["isSold"]]
