@@ -7,9 +7,8 @@ import { showBanner } from "./utils/spinup_visual";
 import { requestLogger } from "./Middleware/requestLogger";
 import rateLimit from "express-rate-limit";
 
-
-
 const main = async () => {
+
   process.env.APP_STARTING = 'true'; // Start server spin up process
 
   const rateLimiter = rateLimit({
@@ -58,7 +57,11 @@ const main = async () => {
 
 
     process.env.APP_STARTING = 'false'; // End server spin up process when app starts listening
-  });
+
+    
+  }).setTimeout(10 * 60 * 1000);;
 };
+
+
 
 main();

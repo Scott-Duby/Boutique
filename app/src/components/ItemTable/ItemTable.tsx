@@ -20,7 +20,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../@shadcn/ui/
 import { Button } from '../@shadcn/ui/button';
 
 // Icons
-import { CirclePlus, Archive, ChartColumnBig } from 'lucide-react';
+import { CirclePlus, Archive, ChartColumnBig, DownloadCloudIcon } from 'lucide-react';
 
 // Cells
 import EditableName from './Cells/EditableCell_NAME';
@@ -34,6 +34,7 @@ import { Bin } from '@/types/Bin';
 // Bin Management
 import { toast } from 'sonner';
 import Chart from '../Charts/Chart';
+import ImportData from '../ImportData';
 
 /**
  * Props for the ItemTable component.
@@ -135,8 +136,7 @@ const ItemTable: React.FC<ItemTableProps> = () => {
   ]);
   
   const [createOpen, setCreateOpen] = useState(false); // State for dialog visibility
-  const [binOpen, setBinOpen] = useState(false); // State for dialog visibility
-  const [dataOpen, setDataOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false); // State for dialog visibility
 
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
 
@@ -202,10 +202,16 @@ const ItemTable: React.FC<ItemTableProps> = () => {
           <div className="flex space-x-2 mt-2 ">
 
             <Button
-              className="flex-2/5 font-medium cursor-pointer border-0 hover:bg-green-600"
+              className="flex-2/5 font-medium cursor-pointer border-0"
               onClick={() => setCreateOpen(true)} // Open the dialog
             >
               <CirclePlus /> Items
+            </Button>
+            <Button
+              className="flex-1/5 font-medium cursor-pointer border-0"
+              onClick={() => setImportOpen(true)} // Open the dialog
+            >
+              <DownloadCloudIcon /> Import Data
             </Button>
           </div>
           <TablePaginator table={table} />
@@ -228,6 +234,14 @@ const ItemTable: React.FC<ItemTableProps> = () => {
           </DialogHeader>
           <div className="overflow-y-auto h-full flex-1/2">
             <BulkCreate table={table} setState={setCreateOpen} />
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={importOpen} onOpenChange={setImportOpen}>
+        <DialogContent>
+          <DialogHeader><h1>Import Closet From Poshmark</h1></DialogHeader>
+          <div className=''>
+            <ImportData />
           </div>
         </DialogContent>
       </Dialog>
