@@ -17,13 +17,10 @@ const RouteHandler = express.Router();
         - Return Response in a JSON object 
             - Message, Response Code || Data
 */
-RouteHandler.use((_, __, next) => {
-  setTimeout(() => {
-    next();
-  }, 300); // 3-millisecond delay
-});
+
 RouteHandler.use("/bins", BinsRouter);
 RouteHandler.use("/items", ItemsRouter);
+
 
 export default RouteHandler;
 

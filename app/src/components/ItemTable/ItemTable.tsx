@@ -20,20 +20,19 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../@shadcn/ui/
 import { Button } from '../@shadcn/ui/button';
 
 // Icons
-import { CirclePlus, Archive, ChartColumnBig } from 'lucide-react';
+import { CirclePlus } from 'lucide-react';
 
 // Cells
 import EditableName from './Cells/EditableCell_NAME';
 import EditableSold from './Cells/EditableCell_SOLD';
 import EditableBin from './Cells/EditableCell_BIN';
 
-// types
+// Types
 import { Item } from '@/types/Item';
 import { Bin } from '@/types/Bin';
 
 // Bin Management
 import { toast } from 'sonner';
-import Chart from '../Charts/Chart';
 
 /**
  * Props for the ItemTable component.
@@ -63,6 +62,7 @@ const ItemTable: React.FC<ItemTableProps> = () => {
   /**
    * Defines the columns for the table using useMemo to optimize performance.
    */
+  const setTable = useBoutiqueStore((state) => state.setTable) // Initialize table state in store
   const items = useBoutiqueStore((state) => state.items);
   const bins = useBoutiqueStore((state) => state.bins )
   const itemsForTable = useItemsForTable()
@@ -135,8 +135,6 @@ const ItemTable: React.FC<ItemTableProps> = () => {
   ]);
   
   const [createOpen, setCreateOpen] = useState(false); // State for dialog visibility
-  const [binOpen, setBinOpen] = useState(false); // State for dialog visibility
-  const [dataOpen, setDataOpen] = useState(false);
 
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
 
@@ -155,6 +153,8 @@ const ItemTable: React.FC<ItemTableProps> = () => {
       meta: tableMeta,
       
   });
+
+  setTable(table)
 
   const tableStateKey = "itemTableSettings";
   const [filtersLoaded, setFiltersLoaded] = useState(false);
@@ -202,7 +202,7 @@ const ItemTable: React.FC<ItemTableProps> = () => {
           <div className="flex space-x-2 mt-2 ">
 
             <Button
-              className="flex-2/5 font-medium cursor-pointer border-0 hover:bg-green-600"
+              className="flex-2/5 font-medium cursor-pointer border-0"
               onClick={() => setCreateOpen(true)} // Open the dialog
             >
               <CirclePlus /> Items

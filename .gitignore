@@ -31,3 +31,5 @@ data
 routeTree.gen.ts
 
 compose.yaml
+
+__pycache__

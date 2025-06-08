@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
+import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
+import { Item } from "@/types/Item";
+import { Row } from "@tanstack/react-table";
 
 
 /**
@@ -18,59 +21,31 @@ import { HOST } from "@/routes/index";
  * @param setOpen - A function to control the open state of the update confirmation dialog.
  * @returns A mutation object from `useMutation` for handling the update operation.
  */
-export const useUpdateItemName = (
-    row: any,
-    table: any,
-    setOpen: (value: boolean) => void
-) => {
-    return useMutation({
-        /**
-         * Mutation function to update the item's name.
-         *
-         * @param name - The new name for the item.
-         * @returns A promise that resolves when the item's name is successfully updated.
-         */
-        mutationFn: ({ name, url } : {name: string, url: string}) => {
-            const id = row.original.id; // Get the item ID from the row
-            setOpen(false); // Close the dialog
 
-            return axios.patch(`http://${HOST}/v1/items/update/${id}`, { 
-                updates: 
-                    [ 
-                        { field: "name", value: name }, 
-                        { field: "web_url", value: url } 
-                    ] 
-                } 
-            ); // Perform the update request
-        },
-        /**
-         * Callback executed when the mutation is successful.
-         *
-         * Updates the table state with the new name and shows a success toast.
-         */
-        onSuccess: ({ data }) => {
-            table.options.meta?.updateData(
-                row.index,
-                "name",
-                data.items.name // Update local state to prevent refresh
-            );
-            table.options.meta?.updateData(
-                row.index,
-                "web_url",
-                data.items.web_url // Update local state to prevent refresh
-            );
-            toast.success(`Item updated successfully`); // Show success notification
-            
-        },
-        /**
-         * Callback executed when the mutation fails.
-         *
-         * Shows an error toast with the error message.
-         *
-         * @param error - The error object containing details about the failure.
-         */
-        onError: (error: any) => {
-            toast.error("Error updating item name: " + error.message); // Show error notification
-        },
-    });
+export const useUpdateItemName = (
+  row: Row<Item>,
+  setOpen: (value: boolean) => void
+) => {
+  const updateData = useBoutiqueStore((state) => state.updateData); // ✅ pull the update function
+
+  return useMutation({
+    mutationFn: ({ name, url }: { name: string; url: string }) => {
+      const id = row.original.id;
+      setOpen(false);
+      return axios.patch(`http://${HOST}/v1/items/update/${id}`, {
+        updates: [
+          { field: "name", value: name },
+          { field: "web_url", value: url },
+        ],
+      });
+    },
+    onSuccess: ({ data }) => {
+      updateData(row.index, "name", data.items.name); 
+      updateData(row.index, "web_url", data.items.web_url);
+      toast.success(`Item updated successfully`);
+    },
+    onError: (error: any) => {
+      toast.error("Error updating item name: " + error.message);
+    },
+  });
 };

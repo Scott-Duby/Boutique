@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "sonner"
 import { Bin } from "@/types/Bin";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
 
 
 export const useEditBinName = (setOpen: (open: boolean) => void) => {
@@ -41,7 +41,6 @@ export const useEditBinName = (setOpen: (open: boolean) => void) => {
                         ]
                     }
                 )
-                
                 return data.data; 
             }
         },
@@ -54,8 +53,5 @@ export const useEditBinName = (setOpen: (open: boolean) => void) => {
             toast.error(`Error updating bin: ${error.message}`)
         },
         onSettled: async () => { await clearActiveBin(); }
-        
-            
-      
     })
 }

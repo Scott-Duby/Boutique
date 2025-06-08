@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
+import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
 
 
 /**
@@ -20,9 +21,9 @@ import { HOST } from "@/routes/index";
  */
 export const useDeleteItem = (
     row: any,
-    table: any,
     setOpen: (value: boolean) => void
 ) => {
+    const deleteData = useBoutiqueStore((state) => state.deleteData)
     return useMutation({
     /**
          * Mutation function to delete the item.
@@ -41,7 +42,7 @@ export const useDeleteItem = (
          * Updates the table state to remove the deleted item and shows a success toast.
          */
         onSuccess: () => {
-            table.options.meta?.deleteData(row.index); // Remove the deleted item from the table
+            deleteData(row.index); // Remove the deleted item from the table
             toast.success("Item deleted successfully"); // Show success notification
         },
         /**

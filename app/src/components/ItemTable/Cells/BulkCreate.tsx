@@ -46,7 +46,7 @@ declare module "@tanstack/react-table" {
  * @returns A JSX element representing the bulk create form.
  */
 const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) => {
-  const createBulk = useBulkCreate(table, setState); // Custom hook for bulk creation
+  const createBulk = useBulkCreate(setState); // Custom hook for bulk creation
   // Initialize the form
   const form = useForm({
     defaultValues: {
