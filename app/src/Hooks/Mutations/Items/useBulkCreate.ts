@@ -1,13 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import axios from "axios";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
+import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
 
 
 export const useBulkCreate = (
-    table: any,
-    setOpen: (value: boolean) => void
-) => useMutation({
+    setOpen ?: (value: boolean) => void
+) => {
+  const createRows = useBoutiqueStore((state) => state.createRows)
+  return useMutation({
     mutationKey: ["createBulkItems"],
     mutationFn: async (data: unknown) => {
       const response = await axios({
@@ -15,8 +17,7 @@ export const useBulkCreate = (
         data: { data },
         method: "post"
       })
-      setOpen(false); // Close the modal after the request
-      console.log(response.data)
+      if(setOpen) setOpen(false); // Close the modal after the request
       return response
     },
     onError: (error) => {
@@ -26,10 +27,11 @@ export const useBulkCreate = (
     onSuccess: ({data}) => {
       console.log(data.items)
       if (Array.isArray(data.items)) {
-        table.options.meta?.createRows(data.items);
+        createRows(data.items);
         toast.success("Items added successfully!");
       } else {
         console.error("Expected an array but received:", data.items);
       }
     },
 })
+}

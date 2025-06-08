@@ -37,8 +37,8 @@ const EditableName:FC<CellContext<Item, unknown>> = ({getValue, row, table}) => 
     })
 
     // Mutation Hooks
-    const updateName = useUpdateItemName(row, table, setOpen);
-    const deleteName = useDeleteItem(row, table, setOpen);
+    const updateName = useUpdateItemName(row, setOpen);
+    const deleteName = useDeleteItem(row, setOpen);
 
     return(
         <div className="flex justify-between">

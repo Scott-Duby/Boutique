@@ -28,13 +28,13 @@ import { useBoutiqueStore } from '@/Hooks/Store/UseBoutiqueStore';
  * @param props - The CellContext props from TanStack React Table.
  * @returns A JSX element representing the editable bin cell.
  */
-const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) => {
+const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row }) => {
 
     const bins = useBoutiqueStore((state) => state.bins); // grab state
     const [open, setOpen] = React.useState(false); // State for dialog open state
 
     // Database query
-    const updateBin = useEditBin(setOpen, row, table); // Custom hook to edit the bin
+    const updateBin = useEditBin(setOpen, row); // Custom hook to edit the bin
     // Form handling
     const form = useForm({
         defaultValues: {

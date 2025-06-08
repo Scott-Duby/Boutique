@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "sonner"
 import { Bin } from "@/types/Bin";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
 
 export const useCreateBin = (setOpen: (open: boolean) => void) => {
     /**

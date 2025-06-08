@@ -28,7 +28,7 @@ declare module "@tanstack/react-table" {
  * @param props - The CellContext props from TanStack React Table.
  * @returns A JSX element representing the editable "sold" status cell.
  */
-const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column, table }) => {
+const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column }) => {
   const [open, setOpen] = React.useState(false); // State for dialog open state
   const form = useForm({
     defaultValues: {
@@ -40,7 +40,7 @@ const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column, t
     },
   });
 
-  const updateSoldById = useUpdateSold(row, table, setOpen, form, column); // Custom hook for updating sold status
+  const updateSoldById = useUpdateSold(row, setOpen, form, column); // Custom hook for updating sold status
 
   return (
     <div className="flex justify-between">

@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { HOST } from "@/routes/index";
+import { HOST } from "@/Routes/index";
 
 
 export const useDeleteBin = () => {

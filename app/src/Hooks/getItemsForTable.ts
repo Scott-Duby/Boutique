@@ -9,7 +9,7 @@ import { useMemo } from "react";
 export function useItemsForTable(): Item[] {
   const items = useBoutiqueStore((state) => state.items);
   const bins = useBoutiqueStore((state) => state.bins);
-
+  
   return useMemo(() => {
     return items.map((item) => {
       const liveBin = bins.find((bin) => bin.id === item.bin?.id) || null;

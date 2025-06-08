@@ -16,7 +16,6 @@ export function createItemTableMeta() {
   const items = useBoutiqueStore((state) => state.items); // Get the current items
 
 
-
   return {
     /**
      * Appends new rows to the existing table data.

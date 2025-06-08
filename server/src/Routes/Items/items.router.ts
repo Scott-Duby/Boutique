@@ -54,6 +54,7 @@ ItemsRouter.delete(
   "/delete/:id",
   param("id").exists().isInt().toInt(),
   async (req: Request<ItemParams>, res: Response): Promise<any> => {
+
     const { id } = req.params;
 
     let payload: ItemReturnMessage;
@@ -123,6 +124,8 @@ ItemsRouter.post(
         errors: error.message,
         operationComplete: false,
       });
+      console.log(req.body.data.values)
+      console.log(error.message)
     }
 
     return res.status(payload.status_code).json(payload);

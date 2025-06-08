@@ -1,4 +1,4 @@
-import ImportData from "@/components/ImportData";
+import ImportData from "@/components/PoshmarkImport/ImportData";
 import { createFileRoute } from "@tanstack/react-router";
 // Removed incomplete import
 
