@@ -15,6 +15,7 @@ import { Button } from '../../@shadcn/ui/button';
 import { Pencil } from 'lucide-react';
 import { useEditBin } from '@/Hooks/Mutations/Items/useEditItemBin';
 import { useBoutiqueStore } from '@/Hooks/Store/UseBoutiqueStore';
+import { Badge } from "@/components/@shadcn/ui/badge"
 
 
 /**
@@ -77,7 +78,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row }) => {
                                 </SelectTrigger>
                                 <SelectContent className=' opacity-90'>
                                     {bins.map((bin) => (
-                                        <SelectItem key={bin.id} value={bin.name}>{bin.name}</SelectItem>
+                                        <SelectItem key={bin.id} value={bin.name}>{bin.name} {bin.is_full && (<Badge className='bg-destructive'>Full</Badge>)}</SelectItem>
                                     ))}
                                     <SelectItem value="No Bin">No Bin</SelectItem>
                                 </SelectContent>

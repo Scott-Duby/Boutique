@@ -5,12 +5,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../@shadcn/ui/dropdown-menu";
-import { Badge, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "../@shadcn/ui/button";
 import { TListing } from "@/types/Listings";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
 import { useForm } from "@tanstack/react-form";
 import { useBulkCreate } from "@/Hooks/Mutations/Items/useBulkCreate";
+import { Input } from "../@shadcn/ui/input";
+import { Badge } from "@/components/@shadcn/ui/badge"
 
 interface ISetItemsFromPoshmark {
   listings: TListing[];
@@ -78,7 +80,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
             {/* Web URL */}
             <div>
                 <label className="text-sm font-medium">Web URL</label>
-                <input
+                <Input
                 type="text"
                 value={item.web_url}
                 onChange={(e) => updateListing(index, "web_url", e.target.value)}
@@ -103,7 +105,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                         key={bin.id}
                         onClick={() => updateListing(index, "bin_id", bin.id)}
                     >
-                        {bin.name}{" "}
+                        {bin.name}
                         {bin.is_full && <Badge className="red-800">full</Badge>}
                     </DropdownMenuItem>
                     ))}
