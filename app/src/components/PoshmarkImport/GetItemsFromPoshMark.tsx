@@ -89,7 +89,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
         <div className="flex flex-col h-screen w-screen">
           <div className=" rounded-lg p-8 flex flex-col items-center gap-4 shadow-lg">
             <span className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-primary" />
-            <span className="text-lg font-semibold">Loading...</span>
+            <span className="text-lg font-semibold">Loading Items, this may take several minutes</span>
           </div>
         </div>
       ) : (
@@ -97,7 +97,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
       )}
       {listings.length < 1 && form.state.isSubmitSuccessful && (
         <div className="flex flex-row gap-2 justify-center mt-5 text-5xl text-destructive underline">
-          No Data Found On This User <FrownIcon size={60} className="" />
+          No Data Found On This User <FrownIcon size={60} />
         </div>
       )}
     </form>

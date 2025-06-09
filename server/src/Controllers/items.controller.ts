@@ -72,6 +72,7 @@ export const createItem = async (name: string) => {
     throw error;
   }
 };
+
 export const deleteItem = async (id: number) => {
   console.log(id);
   try {

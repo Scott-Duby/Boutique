@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import RouteHandler from "./Routes/RouteHandlerV1";
-import cors from "cors"
+import cors from "cors";
 import logger from './utils/logger';
 import { showBanner } from "./utils/spinup_visual";
 import { requestLogger } from "./Middleware/requestLogger";
@@ -36,21 +36,32 @@ const main = async () => {
 
   const app = express();
   const port = 3000;
+
   app.use(cors({
     origin: "*",
   }));
+  
   app.use(rateLimiter);
-  app.use(requestLogger)
-  app.use(express.json({ limit: "2mb" }));
+  app.use(requestLogger);
+  app.use(express.json({ limit: "2mb" })); // <- ??
 
 
   // Routes
   app.use("/v1", RouteHandler);
 
-  app.listen(port, () => {
+  app.listen(port, async () => {
     
     logger.info("Port Available")
-    process.env.NODE_ENV == "production" ? "" /* better way to return here?? */ : logger.warn("logger is setup for development environment");
+    // try {
+    //   await axios.get("http://127.0.0.1:5000"); <- this wont fucking work, what the fuck flask, if this gets uncommented the entire scraper breaks 
+    //   logger.info("Poshmark Scraper appears online at http://127.0.0.1:5000"); // <- this really should be dynamic in env for production
+      
+    // } catch (error) {
+    //   logger.error("Error connecting to Poshmark Scraper at http://127.0.0.1:5000");
+    // }
+  
+     
+    process.env.NODE_ENV == "production" ? false /* better way to return here?? */ : logger.warn("logger is setup for development environment");
     logger.debug(`Postgres Instance Connected: ${process.env.DATABASE_URL}`)
     // Display banner + route list
     showBanner(3000, app);
@@ -61,7 +72,5 @@ const main = async () => {
     
   }).setTimeout(10 * 60 * 1000);;
 };
-
-
 
 main();

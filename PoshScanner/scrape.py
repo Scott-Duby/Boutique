@@ -73,5 +73,3 @@ def scrape_poshmark_with_selenium(username, getOnlyUnsold):
 
     finally:
         driver.quit()
-
-

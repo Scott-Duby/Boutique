@@ -24,7 +24,6 @@ ${routes.join('\n')}
 ${chalk.bold('Docs/Info:')}
   ${chalk.cyan('ENV')}   ${process.env.NODE_ENV}
   ${chalk.cyan('PORT')}  ${port}
-
 ${chalk.bold('Server Ready At:')} ${link}
 
 ${chalk.bold('Startup Logs:')}
