@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SettingsImport } from './routes/settings'
+import { Route as ImportImport } from './routes/import'
 import { Route as DataImport } from './routes/data'
 import { Route as BinsImport } from './routes/bins'
 import { Route as IndexImport } from './routes/index'
@@ -21,6 +22,12 @@ import { Route as IndexImport } from './routes/index'
 const SettingsRoute = SettingsImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ImportRoute = ImportImport.update({
+  id: '/import',
+  path: '/import',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataImport
       parentRoute: typeof rootRoute
     }
+    '/import': {
+      id: '/import'
+      path: '/import'
+      fullPath: '/import'
+      preLoaderRoute: typeof ImportImport
+      parentRoute: typeof rootRoute
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
@@ -83,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/import': typeof ImportRoute
   '/settings': typeof SettingsRoute
 }
 
@@ -90,6 +105,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/import': typeof ImportRoute
   '/settings': typeof SettingsRoute
 }
 
@@ -98,15 +114,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bins': typeof BinsRoute
   '/data': typeof DataRoute
+  '/import': typeof ImportRoute
   '/settings': typeof SettingsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bins' | '/data' | '/settings'
+  fullPaths: '/' | '/bins' | '/data' | '/import' | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bins' | '/data' | '/settings'
-  id: '__root__' | '/' | '/bins' | '/data' | '/settings'
+  to: '/' | '/bins' | '/data' | '/import' | '/settings'
+  id: '__root__' | '/' | '/bins' | '/data' | '/import' | '/settings'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,6 +131,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BinsRoute: typeof BinsRoute
   DataRoute: typeof DataRoute
+  ImportRoute: typeof ImportRoute
   SettingsRoute: typeof SettingsRoute
 }
 
@@ -121,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BinsRoute: BinsRoute,
   DataRoute: DataRoute,
+  ImportRoute: ImportRoute,
   SettingsRoute: SettingsRoute,
 }
 
@@ -137,6 +156,7 @@ export const routeTree = rootRoute
         "/",
         "/bins",
         "/data",
+        "/import",
         "/settings"
       ]
     },
@@ -148,6 +168,9 @@ export const routeTree = rootRoute
     },
     "/data": {
       "filePath": "data.tsx"
+    },
+    "/import": {
+      "filePath": "import.tsx"
     },
     "/settings": {
       "filePath": "settings.tsx"

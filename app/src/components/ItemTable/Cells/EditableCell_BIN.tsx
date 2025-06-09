@@ -15,6 +15,7 @@ import { Button } from '../../@shadcn/ui/button';
 import { Pencil } from 'lucide-react';
 import { useEditBin } from '@/Hooks/Mutations/Items/useEditItemBin';
 import { useBoutiqueStore } from '@/Hooks/Store/UseBoutiqueStore';
+import { Badge } from "@/components/@shadcn/ui/badge"
 
 
 /**
@@ -28,13 +29,13 @@ import { useBoutiqueStore } from '@/Hooks/Store/UseBoutiqueStore';
  * @param props - The CellContext props from TanStack React Table.
  * @returns A JSX element representing the editable bin cell.
  */
-const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) => {
+const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row }) => {
 
     const bins = useBoutiqueStore((state) => state.bins); // grab state
     const [open, setOpen] = React.useState(false); // State for dialog open state
 
     // Database query
-    const updateBin = useEditBin(setOpen, row, table); // Custom hook to edit the bin
+    const updateBin = useEditBin(setOpen, row); // Custom hook to edit the bin
     // Form handling
     const form = useForm({
         defaultValues: {
@@ -77,7 +78,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row, table }) =
                                 </SelectTrigger>
                                 <SelectContent className=' opacity-90'>
                                     {bins.map((bin) => (
-                                        <SelectItem key={bin.id} value={bin.name}>{bin.name}</SelectItem>
+                                        <SelectItem key={bin.id} value={bin.name}>{bin.name} {bin.is_full && (<Badge className='bg-destructive'>Full</Badge>)}</SelectItem>
                                     ))}
                                     <SelectItem value="No Bin">No Bin</SelectItem>
                                 </SelectContent>

@@ -14,7 +14,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "3503"
+      POSTGRES_PASSWORD: your-password
       POSTGRES_DB: Boutique
     ports:
      - "5432:5432"
