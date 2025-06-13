@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,10 +32,30 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredListings, setFilteredListings] = useState<TListing[]>(listings);
+
+  // Search on all listings
+  useEffect(() => {
+    const filtered = listings.filter((listing) =>
+      listing.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
+    );
+    setFilteredListings(filtered);
+    setCurrentPage(1); // Reset to first page when search changes
+  }, [searchQuery, listings]);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentListings = listings.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(listings.length / itemsPerPage);
+  const currentListings = filteredListings.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredListings.length / itemsPerPage);
+
+
+
+
+ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchQuery(e.target.value);
+};
+
 
   const form = useForm({
     defaultValues: [...listings],
@@ -74,7 +94,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
             <Button type="submit" className="m-5 h-15 hover:cursor-pointer flex-2/3 bg-background border-accent border-2">
             Add Items To Inventory
           </Button>
-          <Input className="h-15 m-5 flex-1/3 bg-background border-accent border-2" placeholder="Search Items" />
+          <Input className="h-15 m-5 flex-1/3 bg-background border-accent border-2" onChange={handleInputChange} value={searchQuery} placeholder="Search Items" />
         </div>
         
 

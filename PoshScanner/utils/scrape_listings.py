@@ -3,7 +3,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import time
+from functools import lru_cache
 
+@lru_cache()
 def scrape_poshmark_with_selenium(username, getOnlyUnsold):
     url = f"https://poshmark.com/closet/{username}"
 

@@ -8,6 +8,11 @@ import ItemsRouter from "./Items/items.router";
 import "./Items/items.router.patch";
 import "./Items/items.router.get"
 
+import SettingsRouter from "./Settings/settings.router";
+import "./Settings/settings.router.patch";
+import "./Settings/settings.router.get";
+
+
 const RouteHandler = express.Router();
 
 /* 
@@ -20,7 +25,7 @@ const RouteHandler = express.Router();
 
 RouteHandler.use("/bins", BinsRouter);
 RouteHandler.use("/items", ItemsRouter);
-
+RouteHandler.use("/client-settings", SettingsRouter)
 
 export default RouteHandler;
 

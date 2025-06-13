@@ -26,3 +26,9 @@ model Item {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt() @default(now())
 }
+
+model ClientSettings {
+  id Int @id @default(1) 
+  theme String? // To Be Implemented
+  poshmark_username String? 
+}

@@ -6,6 +6,8 @@ import logger from './utils/logger';
 import { showBanner } from "./utils/spinup_visual";
 import { requestLogger } from "./Middleware/requestLogger";
 import rateLimit from "express-rate-limit";
+import axios from "axios";
+import { prisma } from "./db/prisma";
 
 const main = async () => {
 
@@ -52,14 +54,27 @@ const main = async () => {
   app.listen(port, async () => {
     
     logger.info("Port Available")
-    // try {
-    //   await axios.get("http://127.0.0.1:5000"); <- this wont fucking work, what the fuck flask, if this gets uncommented the entire scraper breaks 
-    //   logger.info("Poshmark Scraper appears online at http://127.0.0.1:5000"); // <- this really should be dynamic in env for production
+    try {
+      await axios.get("http://127.0.0.1:5000"); 
+      logger.info("Poshmark Scraper appears online at http://127.0.0.1:5000"); // <- this really should be dynamic in env for production
       
-    // } catch (error) {
-    //   logger.error("Error connecting to Poshmark Scraper at http://127.0.0.1:5000");
-    // }
+    } catch (error) {
+      logger.error("Error connecting to Poshmark Scraper at http://127.0.0.1:5000");
+    }
   
+    let settings = await prisma.clientSettings.findFirst(); // Grab settings
+    console.log(settings)
+    if(!settings) { 
+      await prisma.clientSettings.create({
+        data: { 
+          poshmark_username: null,
+          theme: "dark"
+        }
+      })
+
+      logger.warn("No Client Settings Embedded, creating new object", settings )
+    }
+    else logger.info("Client Settings Embedded")
      
     process.env.NODE_ENV == "production" ? false /* better way to return here?? */ : logger.warn("logger is setup for development environment");
     logger.debug(`Postgres Instance Connected: ${process.env.DATABASE_URL}`)
