@@ -67,7 +67,7 @@ const main = async () => {
     if(!settings) { 
       await prisma.clientSettings.create({
         data: { 
-          poshmark_username: null,
+          poshmark_username: "",
           theme: "dark"
         }
       })

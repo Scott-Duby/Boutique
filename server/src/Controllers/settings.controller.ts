@@ -1,4 +1,4 @@
-import { prisma } from "src/db/prisma"
+import { prisma } from "../db/prisma"
 
 export const DefaultSettingsSelect = {
     poshmark_username: true,
@@ -7,4 +7,10 @@ export const DefaultSettingsSelect = {
 
 export const getSettings = async () => {
     return await prisma.clientSettings.findFirst({ select: DefaultSettingsSelect})
+}
+
+export const updateUsername = async (username: string) => {
+    let newUsername = await prisma.clientSettings.update({ where: { id: 1 }, data: { poshmark_username: username}})
+
+    return newUsername
 }

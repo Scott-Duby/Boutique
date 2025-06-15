@@ -106,7 +106,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
               className="flex space-x-4 items-center p-4 shadow-xl rounded-md bg-background m-2"
             >
               {/* Item Name */}
-              <div>
+              <div className="flex-2/3">
                 <label className="text-sm font-medium">Item Name</label>
                 <input
                   type="text"

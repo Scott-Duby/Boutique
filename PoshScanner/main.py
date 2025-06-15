@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from PoshScanner.utils.scrape_listings import scrape_poshmark_with_selenium
+from utils.scrape_listings import scrape_poshmark_with_selenium
 from flask_compress import Compress
 import schedule
 

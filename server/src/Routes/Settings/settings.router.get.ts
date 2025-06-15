@@ -1,5 +1,4 @@
-import { getSettings } from "src/Controllers/settings.controller";
-import { prisma } from "../../db/prisma";
+import { getSettings } from "../../Controllers/settings.controller";
 import SettingsRouter from "./settings.router";
 
 SettingsRouter.get("/", async (_, res) => {
