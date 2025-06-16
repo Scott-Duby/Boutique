@@ -5,6 +5,7 @@ import * as React from "react";
 import { Input } from "../@shadcn/ui/input";
 import { Checkbox } from "../@shadcn/ui/checkbox";
 import { FrownIcon } from "lucide-react";
+import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
 
 interface IGetItemsFromPoshmarkProps {
   setListings: React.Dispatch<React.SetStateAction<TListing[]>>;
@@ -21,10 +22,11 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
   message returning since the site DID return and the user knows the site returned data 
   */
   const [dataDidReturn, setDataDidReturn] = React.useState(false) 
+  const settings = useBoutiqueStore((state) => state.clientSettings);
   const scrapedData = useScrapedData();
   const form = useForm({
     defaultValues: {
-      username: "",
+      username: settings.poshmark_username,
       unsoldOnly: true,
     },
     onSubmit: async ({ value }) => {
@@ -59,6 +61,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 onBlur={field.handleBlur}
+                defaultValue={settings.poshmark_username}
               />
             </div>
           )}

@@ -39,16 +39,26 @@ function Home() {
           return data.data;
         },
       },
+      {
+        queryKey: ["getSettings"],
+        queryFn: async () => {
+          const { data } = await axios.get(`http://${HOST}/v1/client-settings`)
+          return data.data
+        }
+      }
     ],
   });
 
   // Load State
   const setBins = useBoutiqueStore((state) => state.setBins);
   const setItems = useBoutiqueStore((state) => state.setItems);
+  const setSettings = useBoutiqueStore((state) => state.setClientSettings)
 
   // Set Query Data
   const getItems = results[0];
   const getBins = results[1];
+  const getSettings = results[2];
+
 
   useEffect(() => {
     if (getItems.isError && getItems.error) {
@@ -69,6 +79,15 @@ function Home() {
       );
     }
   }, [getBins.isError, getBins.error]);
+    useEffect(() => {
+    if (getSettings.isError && getSettings.error) {
+      toast.error(
+        `Error fetching bins: ${
+          (getSettings.error as Error).message || "Something went wrong"
+        }`,
+      );
+    }
+  }, [getSettings.isError, getSettings.error]);
 
   useEffect(() => {
     if (getBins.data) {
@@ -80,6 +99,11 @@ function Home() {
       setItems(getItems.data);
     }
   }, [getItems.data]);
+    useEffect(() => {
+    if (getSettings.data) {
+      setSettings(getSettings.data);
+    }
+  }, [getSettings.data]);
 
   return (
     <div className="min-h-screen flex flex-col items-center">

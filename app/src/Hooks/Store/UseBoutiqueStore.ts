@@ -2,8 +2,12 @@ import { Item } from "@/types/Item";
 import { Bin } from "@/types/Bin"; // Import Bin type
 import { create } from "zustand";
 import { Table } from "@tanstack/react-table";
+import { TClientSettings } from "@/types/Settings";
 
 export type TBoutiqueStore = {
+clientSettings: TClientSettings;
+setClientSettings: (clientSettings: TClientSettings) => void;
+
 bins: Bin[];
 activeBin: Bin | null;
 
@@ -121,4 +125,8 @@ export const useBoutiqueStore = create<TBoutiqueStore>((set, get) => ({
 
     get().updateItem(updated);
   },
+  
+  clientSettings: { poshmark_username: "", theme: "dark" },
+  setClientSettings: (clientSettings) => set({ clientSettings })
+  
 }));
