@@ -24,14 +24,14 @@ import { Input } from "../@shadcn/ui/input";
   const [searchQuery, setSearchQuery] = useState('');
 
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => { // Get Event Handler
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => { // Get Event Handler
     const searchTerm = e.target ? (e.target as HTMLInputElement).value : ''; // Get value or set to ""
     setSearchQuery(searchTerm) // Set the search query for filter function
-    
+      
     const filteredItems = bins.filter((bin) => // Filter 
       bin.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
     )
-    setFilteredBins(filteredItems); // set filter items
+      setFilteredBins(filteredItems); // set filter items
   }
 
   useEffect(() => {

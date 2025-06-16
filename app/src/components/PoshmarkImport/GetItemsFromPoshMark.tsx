@@ -13,10 +13,15 @@ interface IGetItemsFromPoshmarkProps {
 
 const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
   setListings,
-  listings
 }) => {
+  /* 
+  dataDidReturn Controls a state variable that determines whether or not the query actually 
+  returned data (No data means no user), this way I can display a proper error message, 
+  This makes it viable to use a reset button to reset the query whithout that same error 
+  message returning since the site DID return and the user knows the site returned data 
+  */
+  const [dataDidReturn, setDataDidReturn] = React.useState(false) 
   const scrapedData = useScrapedData();
-
   const form = useForm({
     defaultValues: {
       username: "",
@@ -25,9 +30,12 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
     onSubmit: async ({ value }) => {
       setListings([]);
       const req = await scrapedData.mutateAsync(value);
+      setDataDidReturn(req.length > 0);
       return setListings(req);
     },
   });
+
+
   return (
     <form
       onSubmit={(e) => {
@@ -37,9 +45,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
       }}
     >
       
-      <div className=" border-accent border-2 flex flex-row items-end gap-4 p-4 justify-between">
-
-        
+      <div className=" border-accent shadow-2xl flex flex-row items-end gap-4 p-4 justify-between">
         <form.Field
           name="username"
           validators={{
@@ -95,7 +101,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
       ) : (
         <div />
       )}
-      {listings.length < 1 && form.state.isSubmitSuccessful && (
+      {form.state.isSubmitSuccessful && !dataDidReturn && (
         <div className="flex flex-row gap-2 justify-center mt-5 text-5xl text-destructive underline">
           No Data Found On This User <FrownIcon size={60} />
         </div>

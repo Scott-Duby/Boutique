@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../@shadcn/ui/dropdown-menu";
-import { Search, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "../@shadcn/ui/button";
 import { TListing } from "@/types/Listings";
 import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
@@ -14,7 +14,7 @@ import { useBulkCreate } from "@/Hooks/Mutations/Items/useBulkCreate";
 import { Input } from "../@shadcn/ui/input";
 import { Badge } from "@/components/@shadcn/ui/badge";
 import ImportPaginator from "./ImportPaginator";
-import { Label } from "../@shadcn/ui/label";
+import shortid from "shortid";
 
 interface ISetItemsFromPoshmark {
   listings: TListing[];
@@ -32,6 +32,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  // Search State
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredListings, setFilteredListings] = useState<TListing[]>(listings);
 
@@ -44,18 +45,16 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
     setCurrentPage(1); // Reset to first page when search changes
   }, [searchQuery, listings]);
 
+  const reset = () => setListings([])
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentListings = filteredListings.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredListings.length / itemsPerPage);
 
-
-
-
- const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  setSearchQuery(e.target.value);
-};
-
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   const form = useForm({
     defaultValues: [...listings],
@@ -72,14 +71,16 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
     },
   });
 
-  const removeItem = (index: number) => {
-    setListings(listings.filter((_, i) => i !== index));
+  const updateListing = (item: TListing, field: keyof TListing, value: any) => {
+    const updated = listings.map((l) =>
+      l === item ? { ...l, [field]: value } : l
+    );
+    setListings(updated);
   };
 
-  const updateListing = (index: number, field: string, value: any) => {
-    const updatedItems = [...listings];
-    updatedItems[index] = { ...updatedItems[index], [field]: value };
-    setListings(updatedItems);
+  const removeItem = (item: TListing) => {
+    const updated = listings.filter((l) => l !== item);
+    setListings(updated);
   };
 
   return (
@@ -89,20 +90,20 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
         form.handleSubmit();
       }}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-5">
         <div className="flex flex-row">
-            <Button type="submit" className="m-5 h-15 hover:cursor-pointer flex-2/3 bg-background border-accent border-2">
+            <Button type="submit" className="m-2 h-15 hover:cursor-pointer flex-2/3 bg-background border-accent border-2">
             Add Items To Inventory
           </Button>
-          <Input className="h-15 m-5 flex-1/3 bg-background border-accent border-2" onChange={handleInputChange} value={searchQuery} placeholder="Search Items" />
+          <Button onClick={reset} className="h-15 m-2 flex-1/16 bg-background border-accent border-2" type="button">Reset</Button>
+          <Input className="h-15 m-2 flex-1/3 bg-background border-accent border-2 hover:bg-destructive" onChange={handleInputChange} value={searchQuery} placeholder="Search Items" />
         </div>
         
-
-        {currentListings.map((item, index) => {
-          const realIndex = indexOfFirstItem + index;
+        {currentListings.length < 1 ? <div className="text-center flex flex-col border-2 p-6 border-accent"><h1 className="text-3xl underline">No Items Found</h1> Try refining your search</div> : ""}
+        {currentListings.map((item) => {
           return (
             <div
-              key={realIndex}
+              key={shortid.generate()}
               className="flex space-x-4 items-center p-4 shadow-xl rounded-md bg-background m-2"
             >
               {/* Item Name */}
@@ -115,7 +116,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                   className="rounded p-2 w-full border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
                   required
                   onChange={(e) =>
-                    updateListing(realIndex, "name", e.target.value)
+                    updateListing(item, "name", e.target.value)
                   }
                 />
               </div>
@@ -127,7 +128,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                   type="text"
                   value={item.web_url}
                   onChange={(e) =>
-                    updateListing(realIndex, "web_url", e.target.value)
+                    updateListing(item, "web_url", e.target.value)
                   }
                   placeholder="Enter web URL"
                   className="rounded p-2 w-full border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
@@ -150,7 +151,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                       <DropdownMenuItem
                         key={bin.id}
                         onClick={() =>
-                          updateListing(realIndex, "bin_id", bin.id)
+                          updateListing(item, "bin_id", bin.id)
                         }
                       >
                         {bin.name}
@@ -158,7 +159,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                       </DropdownMenuItem>
                     ))}
                     <DropdownMenuItem
-                      onClick={() => updateListing(realIndex, "bin_id", null)}
+                      onClick={() => updateListing(item, "bin_id", null)}
                     >
                       No Bin
                     </DropdownMenuItem>
@@ -172,7 +173,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                 <select
                   value={item.isSold ? "yes" : "no"}
                   onChange={(e) =>
-                    updateListing(realIndex, "isSold", e.target.value === "yes")
+                    updateListing(item, "isSold", e.target.value === "yes")
                   }
                   className="rounded border-b-card-foreground border-2 p-2 w-full"
                   style={{
@@ -192,7 +193,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
                 className="text-destructive cursor-pointer hover:text-red-400 mt-4"
                 scale={50}
                 fill="#f14444"
-                onClick={() => removeItem(realIndex)}
+                onClick={() => removeItem(item)}
               />
             </div>
           );
@@ -200,6 +201,7 @@ const SetItemsFromPoshmark: FC<ISetItemsFromPoshmark> = ({
 
         {/* Pagination Controls */}
         <ImportPaginator currentPage={currentPage} onPageChange={setCurrentPage} totalPages={totalPages} />
+
       </div>
     </form>
   );
