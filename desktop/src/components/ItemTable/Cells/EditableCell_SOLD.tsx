@@ -1,0 +1,96 @@
+import React, { FC } from "react";
+import { Item } from "@/types/Item";
+import { CellContext } from "@tanstack/react-table";
+import { Button } from "../../@shadcn/ui/button";
+import { useForm } from "@tanstack/react-form";
+import { Label } from "../../@shadcn/ui/label";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../@shadcn/ui/dialog";
+import { DialogHeader } from "../../@shadcn/ui/dialog";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../../@shadcn/ui/select";
+import { useUpdateSold } from "@/Hooks/Mutations/Items/useUpdateSold";
+import { Pencil } from "lucide-react";
+
+// Extend TableMeta to include updateData
+declare module "@tanstack/react-table" {
+  interface TableMeta<TData> {
+    updateData: (rowIndex: number, columnId: string, value: unknown) => void;
+  }
+}
+
+/**
+ * EditableSold component for rendering an editable "sold" status within a table cell.
+ *
+ * This component displays the current "sold" status (Yes/No) and provides a dialog
+ * to change the status for a specific item. It uses TanStack React Table for cell
+ * context, TanStack Form for form management, TanStack Query for data mutation,
+ * and Shadcn UI components for styling.
+ *
+ * @param props - The CellContext props from TanStack React Table.
+ * @returns A JSX element representing the editable "sold" status cell.
+ */
+const EditableSold: FC<CellContext<Item, unknown>> = ({ getValue, row, column }) => {
+  const [open, setOpen] = React.useState(false); // State for dialog open state
+  const form = useForm({
+    defaultValues: {
+      sold: getValue<boolean>(),
+    },
+    onSubmit: ({ value }) => {
+      const newSold = value.sold;
+      updateSoldById.mutate(newSold);
+    },
+  });
+
+  const updateSoldById = useUpdateSold(row, setOpen, form, column); // Custom hook for updating sold status
+
+  return (
+    <div className="flex justify-between">
+      {getValue<boolean>() ? "Yes" : "No"}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger className="cursor-pointer hover:text-green-100"> 
+          <Pencil size={20}/>
+        </DialogTrigger>
+        <DialogContent className="text-center opacity-90">
+          <DialogHeader>
+            <DialogTitle className="text-center">Edit Sold Status</DialogTitle>
+            <form
+              className="space-y-8"
+              onSubmit={(e) => {
+                e.preventDefault();
+                form.handleSubmit();
+              }}
+            >
+              <DialogDescription className="text-center ">
+                Are you sure you want to edit the sold status?
+              </DialogDescription>
+              <form.Field
+                name="sold"
+                children={(field) => (
+                  <div className="flex flex-col items-center space-y-2">
+                    <Label htmlFor="sold" className="">Sold</Label>
+                    <Select
+                        value={field.state.value ? "Yes" : "No"}
+                        onValueChange={(value) => field.setValue(value === "Yes")}
+                    >
+                      <SelectTrigger className="w-[240px] " >
+                        <SelectValue placeholder="Select status" />
+                      </SelectTrigger>
+                      <SelectContent className="opacity-100">
+                        <SelectItem value="Yes" className="bg-green-600 hover:bg-green-500 mb-1 focus:bg-green-500">Yes</SelectItem>
+                        <SelectItem value="No" className="bg-red-500 focus:bg-red-500">No</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+              />
+              <Button type="submit" className="mt-4 hover:bg-green-500">
+                Submit
+              </Button>
+            </form>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
+
+export default EditableSold;

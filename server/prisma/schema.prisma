@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Bin {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(256)
+  is_full   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  items     Item[]
+}
+
+model Item {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(256)
+  sold      Boolean  @default(false)
+  web_url   String?  @default("https://poshmark.com") @db.VarChar(256)
+  bin_id    Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  bin       Bin?     @relation(fields: [bin_id], references: [id])
+}
