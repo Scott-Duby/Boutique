@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import { TListing } from "@/types/Listings";
+import React, { FC, useState } from "react";
+import { TListing } from "../../types/Listings";
 import GetItemsFromPoshmark from "./GetItemsFromPoshMark";
 import SetItemsFromPoshmark from "./SetItemsFromPoshmark";
 
@@ -11,7 +11,7 @@ const ImportData: FC<ImportFormProps> = ({}) => {
   // Handle removing an item
 
   return (
-    <div className="p-5 h-screen w-screen ">
+    <div className="p-5 h-full w-full ">
       <GetItemsFromPoshmark listings={listings} setListings={setListings} />
       {listings.length > 0 && (
         <SetItemsFromPoshmark listings={listings} setListings={setListings} />

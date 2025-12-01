@@ -3,8 +3,8 @@ import { Input } from "../@shadcn/ui/input";
 import { Checkbox } from "../@shadcn/ui/checkbox";
 import { Label } from "../@shadcn/ui/label";
 import { Funnel } from "lucide-react";
-import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { Bin } from "@/types/Bin";
+import { useBoutiqueStore } from "../../Hooks/Store/UseBoutiqueStore";
+import { Bin } from "../../types/Bin";
 import { Button } from "../@shadcn/ui/button";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuContent, DropdownMenuTrigger } from "../@shadcn/ui/dropdown-menu";
@@ -97,7 +97,7 @@ export function Filters({ columnFilters, setColumnFilters }: IFiltersProps) {
         placeholder="Search items..."
         value={name}
         onChange={(e) => onFilterChange("name", e.target.value)}
-        className="flex-grow bg-primary shadow-md placeholder:text-foreground"
+        className="grow bg-secondary-muted/95 backdrop-blur-md border-0 placeholder:text-foreground"
       />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

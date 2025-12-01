@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { CellContext } from "@tanstack/react-table";
-import { Item } from "@/types/Item";
+import { Item } from "../../../types/Item";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogHeader } from '../../@shadcn/ui/dialog';
 import { useForm } from '@tanstack/react-form';
 import {
@@ -13,9 +13,9 @@ import {
 import { Label } from '../../@shadcn/ui/label';
 import { Button } from '../../@shadcn/ui/button';
 import { Pencil } from 'lucide-react';
-import { useEditBin } from '@/Hooks/Mutations/Items/useEditItemBin';
-import { useBoutiqueStore } from '@/Hooks/Store/UseBoutiqueStore';
-import { Badge } from "@/components/@shadcn/ui/badge"
+import { useEditBin } from '../../../Hooks/Mutations/Items/useEditItemBin';
+import { useBoutiqueStore } from '../../../Hooks/Store/UseBoutiqueStore';
+import { Badge } from "../../../components/@shadcn/ui/badge"
 
 
 /**
@@ -56,7 +56,7 @@ const EditableBin: FC<CellContext<Item, unknown>> = ({ getValue, row }) => {
             <DialogTrigger className='underline hover:text-green-100 cursor-pointer'>
                 <Pencil size={20}/>
             </DialogTrigger>
-            <DialogContent className="text-center opacity-90 ">
+            <DialogContent className="text-center bg-secondary-muted/95 backdrop-blur-md border-0 ">
                 <DialogHeader>
                 <DialogTitle className="text-center">Edit {getValue<string>()}?</DialogTitle>
                 <form  className="space-y-8" onSubmit={(e) => {

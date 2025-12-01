@@ -1,14 +1,15 @@
+import React from "react";
 import {
   Dialog,
   DialogHeader,
   DialogContent,
-} from "@/components/@shadcn/ui/dialog";
+} from "../../components/@shadcn/ui/dialog";
 import { Input } from "../@shadcn/ui/input";
 import { Button } from "../@shadcn/ui/button";
 import { useForm } from "@tanstack/react-form";
 import { Label } from "../@shadcn/ui/label";
-import { useEditBinName } from "@/Hooks/Mutations/Bins/useEditBinName";
-import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
+import { useEditBinName } from "../../Hooks/Mutations/Bins/useEditBinName";
+import { useBoutiqueStore } from "../../Hooks/Store/UseBoutiqueStore";
 import TableSkeleton from "../ItemTable/TableSkeleton";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "../@shadcn/ui/select";
   
@@ -38,7 +39,7 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from ".
     return (
       
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="rounded-lg border-0 shadow-lg p-6">
+        <DialogContent className="rounded-lg shadow-lg p-6 bg-secondary-muted/95 backdrop-blur-md border-0">
           <DialogHeader className="">Edit {activeBin.name}</DialogHeader>
           <div className="flex justify-between">
           <form

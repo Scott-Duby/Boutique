@@ -1,13 +1,14 @@
 import {
     BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer
   } from 'recharts';
+import React from 'react';
+
+type BinChartData = {
+  name: string;
+  itemCount: number;
+};
   
-  type BinChartData = {
-    name: string;
-    itemCount: number;
-  };
-  
-  export default function BinBarChart({ data }: { data: BinChartData[] }) {
+export default function BinBarChart({ data }: { data: BinChartData[] }) {
     return (
       <div className="w-full h-[400px]">
         <h1 className='text-center text-3xl underline'>Bins</h1>
@@ -23,5 +24,5 @@ import {
         </ResponsiveContainer>
       </div>
     );
-  }
+}
   

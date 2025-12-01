@@ -1,14 +1,14 @@
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../@shadcn/ui/dialog";
 import React, { FC } from "react";
 import { DialogHeader } from "../../@shadcn/ui/dialog";
-import { Item } from "@/types/Item";
+import { Item } from "../../../types/Item";
 import { CellContext } from "@tanstack/react-table";
 import { Input } from "../../@shadcn/ui/input";
 import { Button } from "../../@shadcn/ui/button";
 import { useForm } from "@tanstack/react-form"
 import { Label } from "../../@shadcn/ui/label";
-import { useUpdateItemName } from "@/Hooks/Mutations/Items/useUpdateItemName";
-import { useDeleteItem } from "@/Hooks/Mutations/Items/useDeleteItem";
+import { useUpdateItemName } from "../../../Hooks/Mutations/Items/useUpdateItemName";
+import { useDeleteItem } from "../../../Hooks/Mutations/Items/useDeleteItem";
 import { Link, Pencil } from "lucide-react";
 
 /**
@@ -54,7 +54,7 @@ const EditableName:FC<CellContext<Item, unknown>> = ({getValue, row, table}) => 
             <DialogTrigger className='cursor-pointer hover:text-green-100'>
                 <Pencil size={20}/>    
             </DialogTrigger> 
-            <DialogContent className="text-centeropacity-90">
+            <DialogContent className="text-center bg-secondary-muted/95 backdrop-blur-md border-0">
                 <DialogHeader>
                 <DialogTitle className="text-center ">Edit {getValue<string>()}?</DialogTitle>
                 <form  className="space-y-8" onSubmit={(e) => e.preventDefault()}>

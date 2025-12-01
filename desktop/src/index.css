@@ -12,6 +12,14 @@
     /* Or you could use percentages */
     /* font-size: 112.5%; */ 
   }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scroll on the body, let the App handle it */
+  }
+
 }
 
 /* ... all your existing @tailwind, @layer, and scrollbar rules ... */

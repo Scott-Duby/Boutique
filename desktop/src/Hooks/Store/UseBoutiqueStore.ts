@@ -1,8 +1,8 @@
-import { Item } from "@/types/Item";
-import { Bin } from "@/types/Bin"; // Import Bin type
+import { Item } from "../../types/Item";
+import { Bin } from "../../types/Bin"; // Import Bin type
 import { create } from "zustand";
 import { Table } from "@tanstack/react-table";
-import { TClientSettings } from "@/types/Settings";
+import { TClientSettings } from "../../types/Settings";
 
 export type TBoutiqueStore = {
 clientSettings: TClientSettings;

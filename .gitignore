@@ -33,3 +33,5 @@ routeTree.gen.ts
 compose.yaml
 
 __pycache__
+
+release/*

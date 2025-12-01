@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import React, { useState, useEffect } from 'react';
+import { Button } from '../components/@shadcn/ui/button';
 
 export const Route = createFileRoute('/settings')({
   component: Settings,
@@ -35,7 +36,7 @@ function Settings() {
   };
 
   return (
-    <div className="min-h-screen min-w-screen  items-center bg-background">
+    <div className=" items-center bg-background">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-gray-100">Application Settings</h1>
         
@@ -61,16 +62,16 @@ function Settings() {
               {status}
             </span>
             
-            <button
+            <Button
               onClick={handleSave}
-              className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors duration-200"
+              className="px-6 py-2 flex-1/12 rounded-md font-medium transition-colors duration-200 m-2"
             >
               Save Changes
-            </button>
+            </Button>
+            <Button onClick={() => window.location.reload()}>Reload</Button>
           </div>
         </div>
       </div>
-      <button>Reload</button>
     </div>
   );
 };

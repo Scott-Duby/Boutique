@@ -1,15 +1,21 @@
 {
-  "name": "app",
+  "name": "boutique",
+  "productName": "Boutique",
   "private": true,
+  "author": "Scott Duby",
+  "description": "Poshmark Inventory Manager",
   "version": "0.0.0",
   "type": "module",
   "main": "electron/main.cjs",
   "scripts": {
     "dev:vite": "vite",
     "dev:electron": "wait-on http://localhost:5173 && electron .",
-    "start": "concurrently \"npm:dev:vite\" \"npm:dev:electron\"",
+    "start": "electron-forge start",
     "build": "vite build",
-    "start:prod": "npm run build && electron ."
+    "start:prod": "npm run build && electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "release": "yarn build && electron-builder"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -37,6 +43,7 @@
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "electron-squirrel-startup": "^1.0.1",
     "electron-store": "8.1.0",
     "lucide-react": "^0.511.0",
     "next-themes": "^0.4.6",
@@ -56,16 +63,18 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
     "@eslint/js": "^9.21.0",
     "@tanstack/router-plugin": "^1.120.5",
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@types/shortid": "^0.0.38",
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^8.2.2",
     "dotenv": "^16.5.0",
     "electron": "^31.0.1",
+    "electron-builder": "^26.0.12",
     "electron-vite": "^3.1.0",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
@@ -76,5 +85,45 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
     "wait-on": "^7.2.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "boutique_app",
+            "setupExe": "BoutiqueSetup.exe",
+            "setupIcon": "src/assets/source.ico"
+          }
+        }
+      ]
+    }
+  },
+  "build": {
+    "appId": "com.scoot.boutique",
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/source.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Boutique",
+      "artifactName": "Boutique Setup.${ext}"
+    },
+    "files": [
+      "electron/**/*",          
+      "dist/**/*",        
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    }
   }
 }

@@ -58,7 +58,6 @@ function Home() {
   const getItems = results[0];
   const getBins = results[1];
 
-
   useEffect(() => {
     if (getItems.isError && getItems.error) {
       toast.error(
@@ -67,7 +66,6 @@ function Home() {
         }`,
       );
     }
-
   }, [getItems.isError, getItems.error]);
   useEffect(() => {
     if (getBins.isError && getBins.error) {
@@ -89,7 +87,7 @@ function Home() {
     }
   }, [getItems.data]);
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="flex flex-col h-full w-full">
       {getItems.isLoading || getBins.isLoading ? (
         <div className='flex items-center min-h-screen min-w-screen justify-center'> 
           <TableSkeleton />
@@ -102,10 +100,15 @@ function Home() {
           <Outlet />  
         </div>
       ) : (
-        <div className='min-w-screen'>
-          <Navbar />
-          <hr className="text-accent mb-1"/>
-          <Outlet />  
+        <div className='flex flex-col h-full w-full overflow-hidden'>
+          <div className="shrink-0">
+             <Navbar />
+             <hr className="text-accent mb-1"/>
+          </div>
+
+          <main className="flex-1 w-full overflow-y-auto">
+             <Outlet />  
+          </main>
         </div>
       )}
       <TanStackRouterDevtools />

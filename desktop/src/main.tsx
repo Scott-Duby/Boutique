@@ -1,13 +1,16 @@
+import React from 'react';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
-import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { RouterProvider, createRouter, createHashHistory } from '@tanstack/react-router';
 
 import { routeTree } from './routeTree.gen';
 
-// Create a new router instance
-const router = createRouter({ routeTree });
+// Used to serve static environment (Electron)
+export const history = createHashHistory();
+
+const router = createRouter({ routeTree, basepath: './', history });
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {

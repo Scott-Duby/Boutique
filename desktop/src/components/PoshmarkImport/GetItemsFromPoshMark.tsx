@@ -1,11 +1,11 @@
-import { useScrapedData } from "@/Hooks/Mutations/useScrapedData";
-import { TListing } from "@/types/Listings";
+import { useScrapedData } from "../../Hooks/Mutations/useScrapedData";
+import { TListing } from "../../types/Listings";
 import { useForm } from "@tanstack/react-form";
 import * as React from "react";
 import { Input } from "../@shadcn/ui/input";
 import { Checkbox } from "../@shadcn/ui/checkbox";
 import { FrownIcon } from "lucide-react";
-import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
+import { useBoutiqueStore } from "../../Hooks/Store/UseBoutiqueStore";
 
 interface IGetItemsFromPoshmarkProps {
   setListings: React.Dispatch<React.SetStateAction<TListing[]>>;
@@ -45,6 +45,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
         e.stopPropagation();
         form.handleSubmit();
       }}
+      className="flex flex-col w-full h-full"
     >
       
       <div className=" border-accent shadow-2xl flex flex-row items-end gap-4 p-4 justify-between">
@@ -95,7 +96,7 @@ const GetItemsFromPoshmark: React.FC<IGetItemsFromPoshmarkProps> = ({
         />
       </div>
         {form.state.isSubmitting ? (
-        <div className="flex flex-col h-screen w-screen">
+        <div className="flex flex-col w-full items-center justify-centewr gap-4 p-8 py-20">
           <div className=" rounded-lg p-8 flex flex-col items-center gap-4 shadow-lg">
             <span className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-primary" />
             <span className="text-lg font-semibold">Loading Items, this may take several minutes</span>
