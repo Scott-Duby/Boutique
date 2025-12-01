@@ -1,5 +1,5 @@
-import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { Item } from "@/types/Item";
+import { useBoutiqueStore } from "../Hooks/Store/UseBoutiqueStore";
+import { Item } from "../types/Item";
 import { useMemo } from "react";
 
 /**

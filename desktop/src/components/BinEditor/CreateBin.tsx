@@ -2,13 +2,13 @@ import {
   Dialog,
   DialogHeader,
   DialogContent,
-} from "@/components/@shadcn/ui/dialog";
+} from "../../components/@shadcn/ui/dialog";
 import { Input } from "../@shadcn/ui/input";
 import { Button } from "../@shadcn/ui/button";
-import { useCreateBin } from "@/Hooks/Mutations/Bins/useCreateBin";
+import { useCreateBin } from "../../Hooks/Mutations/Bins/useCreateBin";
 import { useForm } from "@tanstack/react-form";
 import { Label } from "../@shadcn/ui/label";
-
+import React from "react";
 export interface ICreateBinProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -29,7 +29,7 @@ export function CreateBin({ open, onOpenChange }: ICreateBinProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-gray-700 rounded-lg border-0 shadow-lg p-6">
+      <DialogContent className="bg-secondary-muted/95 backdrop-blur-md border-0 shadow-lg p-6">
         <DialogHeader className="text-gray-200">Create New Bin</DialogHeader>
         <form
           className="space-y-8"

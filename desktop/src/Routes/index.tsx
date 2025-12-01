@@ -1,7 +1,7 @@
+import React from "react";
 import ItemTable from "../components/ItemTable/ItemTable";
 import { Heart } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-// Removed incomplete import
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -11,8 +11,8 @@ export const HOST = await window.electronAPI.settings.getConnectionString();
 
 function Index() {
   return (
-    <div className="min-h-screen min-w-screen flex flex-col items-center bg-background p-4">
-      <div className="w-full max-w-900 max-h-150 p-4 bg-popover shadow-2xl rounded-lg">
+    <div className="flex flex-col items-center bg-background p-4">
+      <div className="w-full h-full p-4 bg-popover shadow-2xl rounded-lg">
         <ItemTable />
       </div>
       <div className="flex flex-col align-middle items-center justify-center mt-8 py-8">

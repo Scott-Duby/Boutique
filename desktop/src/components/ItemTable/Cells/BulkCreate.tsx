@@ -5,14 +5,15 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/@shadcn/ui/dropdown-menu"; // Import shadcn dropdown components
+} from "../../../components/@shadcn/ui/dropdown-menu"; // Import shadcn dropdown components
 import { Table } from "@tanstack/react-table";
-import { Item } from "@/types/Item";
+import { Item } from "../../../types/Item";
 import { Button } from "../../@shadcn/ui/button";
-import { useBulkCreate } from "@/Hooks/Mutations/Items/useBulkCreate";
+import { useBulkCreate } from "../../../Hooks/Mutations/Items/useBulkCreate";
 import { X } from "lucide-react";
-import { useBoutiqueStore } from "@/Hooks/Store/UseBoutiqueStore";
-import { Badge } from "@/components/@shadcn/ui/badge";
+import { useBoutiqueStore } from "../../../Hooks/Store/UseBoutiqueStore";
+import { Badge } from "../../../components/@shadcn/ui/badge";
+import { Bin } from "src/types/Bin";
 
 /**
  * Props for the BulkCreate component.
@@ -58,7 +59,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
     }
   });
 
-  const bins = useBoutiqueStore((state) => state.bins);
+  const bins = useBoutiqueStore((state: { bins: Bin[] }) => state.bins);
 
   const [items, setItems] = React.useState([{ name: "", binId: null, sold: false, web_url: "https://poshmark.com" }]); // State to manage items
 
@@ -90,7 +91,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
         className="space-y-4"
       >
         {items.map((item, index) => (
-          <div key={index} className="flex space-x-4 items-center p-4 shadow-xl rounded-md">
+          <div key={index} className="flex space-x-4 items-center p-4 shadow-xl rounded-md bg-secondary-muted/75 backdrop-blur-md border-0">
             {/* Item Name */}
             <div>
               <label className="text-sm font-medium  -foreground">Item Name</label>
@@ -99,7 +100,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
                 value={item.name}
                 onChange={(e) => updateItem(index, "name", e.target.value)}
                 placeholder="Enter item name"
-                className="rounded p-2 w-full   border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="p-2 rounded-md w-full focus:outline-none focus:ring-2 border-b-2 border-b-accent"
                 required
               />
             </div>
@@ -110,7 +111,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
                 value={item.web_url}
                 onChange={(e) => updateItem(index, "web_url", e.target.value)}
                 placeholder="Enter web URL"
-                className="rounded p-2 w-full   border-gray-600 border-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="p-2 rounded-md w-full focus:outline-none focus:ring-2 border-b-2 border-b-accent"
                 required
               />
             </div>
@@ -120,13 +121,13 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
               <label className="block text-sm font-medium">Bin</label>
               <DropdownMenu>
                 <DropdownMenuTrigger 
-                className="border-2 focus:outline-none focus:ring-2 rounded p-2 w-full text-left">
+                className=" focus:outline-none rounded p-2 w-full text-left focus:ring-0 border-b-2 border-b-accent">
                   {item.binId
-                    ? bins.find((bin) => bin.id === item.binId)?.name || "Select a Bin"
+                    ? bins.find((bin: Bin) => bin.id === item.binId)?.name || "Select a Bin"
                     : "Select a Bin"}
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="">
-                  {bins.map((bin) => (
+                <DropdownMenuContent className="bg-secondary">
+                  {bins.map((bin: Bin) => (
                     <DropdownMenuItem
                       key={bin.id}
                       onClick={() => updateItem(index, "binId", bin.id)}
@@ -148,7 +149,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
               <select
                 value={item.sold ? "yes" : "no"}
                 onChange={(e) => updateItem(index, "sold", e.target.value === "yes")}
-                className=" rounded border-b-card-foreground border-2 p-2 w-full"
+                className=" rounded border-b-2 border-b-accent p-2 w-full focus:outline-none focus:ring-0"
                 style={{
                   width: "100px", // Make the dropdown larger
                   height: "40px", // Increase height
@@ -156,8 +157,8 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
                   borderRadius: "0.375rem", // Rounded corners
                 }}
               >
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="yes" className="bg-secondary/75 backdrop-blur-md border-0">Yes</option>
+                <option value="no" className="bg-secondary/75 backdrop-blur-md border-0">No</option>
               </select>
             
               {/* Remove Button */}
@@ -191,7 +192,7 @@ const BulkCreate: React.FunctionComponent<IBulkProps> = ({ table, setState }) =>
         {/* Submit Button */}
         <Button
           type="submit"
-          className=" green-500 hover: green-400 "
+          className="hover:shadow-lg shadow-md  input"
           style={{
             color: "white", // Tailwind's text-white
             padding: "8px 16px", // Tailwind's px-4 py-2

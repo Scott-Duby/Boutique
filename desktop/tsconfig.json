@@ -27,10 +27,15 @@
   "exclude": [
     "node_modules",
     "build",
+    "dist",
+    "electron",
     "scripts",
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
+    "src/setupTests.ts",
+    "vite.config.ts",
+    "postcss.config.cjs",
+    "tailwind.config.cjs"
   ]
 }

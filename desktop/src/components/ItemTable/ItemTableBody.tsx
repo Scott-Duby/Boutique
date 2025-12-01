@@ -1,6 +1,7 @@
+import React from 'react';
 import { flexRender, Table } from '@tanstack/react-table';
 import { TableBody, TableRow, TableCell } from '../@shadcn/ui/table';
-import { Item } from '@/types/Item';
+import { Item } from '../../types/Item';
 
 /**
  * Props for the ItemTableBody component.
@@ -23,7 +24,7 @@ interface ITableBodyProps {
  */
 export const ItemTableBody: React.FunctionComponent<ITableBodyProps> = ({ table }) => {
   return (
-    <TableBody >
+    <TableBody className='' >
       {table.getRowModel().rows.length === 0 && (
         <TableRow>
           <TableCell colSpan={table.getAllColumns().length} className='text-center'>

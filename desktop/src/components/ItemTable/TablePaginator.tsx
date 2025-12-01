@@ -9,7 +9,7 @@ import {
   PaginationNext,
 } from '../@shadcn/ui/pagination';
 import { Table } from '@tanstack/react-table';
-import { Item } from '@/types/Item';
+import { Item } from '../../types/Item';
 
 export interface TablePaginatorProps {
   table: Table<Item>;
@@ -41,10 +41,10 @@ export const TablePaginator: React.FC<TablePaginatorProps> = ({ table }) => {
         {/* Previous */}
         <PaginationItem>
           <PaginationPrevious
+            size="sm"
             href="#"
-            onClick={() => table.previousPage()}
-            className={!table.getCanPreviousPage() ? 'opacity-50 pointer-events-none' : ''}
-          >
+            onClick={(e) => {e.preventDefault(); table.previousPage();}}
+            className={!table.getCanPreviousPage() ? 'opacity-50 pointer-events-none' : ''}>
             Previous
           </PaginationPrevious>
         </PaginationItem>
@@ -54,6 +54,7 @@ export const TablePaginator: React.FC<TablePaginatorProps> = ({ table }) => {
           <>
             <PaginationItem>
               <PaginationLink
+                size="sm"
                 href="#"
                 onClick={() => table.setPageIndex(0)}
                 className={currentPage === 0 ? 'font-bold text-gray-100 underline' : ''}
@@ -73,8 +74,9 @@ export const TablePaginator: React.FC<TablePaginatorProps> = ({ table }) => {
         {pagesToShow.map((pageIndex) => (
           <PaginationItem key={pageIndex}>
             <PaginationLink
+              size="sm"
               href="#"
-              onClick={() => table.setPageIndex(pageIndex)}
+              onClick={(e) => {e.preventDefault(); table.setPageIndex(pageIndex)}}
               className={currentPage === pageIndex ? 'font-bold text-gray-100 underline' : ''}
             >
               {pageIndex + 1}
@@ -92,8 +94,9 @@ export const TablePaginator: React.FC<TablePaginatorProps> = ({ table }) => {
             )}
             <PaginationItem>
               <PaginationLink
+                size="sm"
                 href="#"
-                onClick={() => table.setPageIndex(totalPages - 1)}
+                onClick={(e) => {e.preventDefault(); table.setPageIndex(totalPages - 1)}}
                 className={currentPage === totalPages - 1 ? 'font-bold text-gray-100 underline' : ''}
               >
                 {totalPages}
@@ -101,12 +104,12 @@ export const TablePaginator: React.FC<TablePaginatorProps> = ({ table }) => {
             </PaginationItem>
           </>
         )}
-
         {/* Next */}
         <PaginationItem>
           <PaginationNext
+            size="sm"
             href="#"
-            onClick={() => table.nextPage()}
+            onClick={(e) => {e.preventDefault(); table.nextPage();}}
             className={!table.getCanNextPage() ? 'opacity-50 pointer-events-none' : ''}
           >
             Next

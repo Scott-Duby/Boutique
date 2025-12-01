@@ -13,6 +13,9 @@ export default defineConfig({
     TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), 
     react(),
   ],
+  build: {
+    target: 'esnext',
+  },
   
   resolve: {
     alias: {

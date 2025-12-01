@@ -1,6 +1,7 @@
+import React from 'react';
 import { TableHead, TableHeader, TableRow } from '../@shadcn/ui/table';
 import { flexRender, Table } from '@tanstack/react-table';
-import { Item } from '@/types/Item';
+import { Item } from '../../types/Item';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 
 /**

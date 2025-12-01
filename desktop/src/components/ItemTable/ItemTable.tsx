@@ -1,4 +1,5 @@
 // table management
+import React from 'react';
 import { ColumnDef, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { ItemTableHeader } from './ItemTableHeader';
 import { ItemTableBody } from './ItemTableBody';
@@ -189,11 +190,11 @@ const ItemTable: React.FC<ItemTableProps> = () => {
   }, [columnFilters, pagination, filtersLoaded]);
 
   return (
-    <div className="flex flex-col h-full min-h-100"> 
+    <div className="flex flex-col h-full w-full"> 
       <div className="flex flex-col grow overflow-hidden"> 
           <Filters columnFilters={columnFilters} setColumnFilters={setColumnFilters} bins={bins} /> 
-        <div className="grow overflow-auto"> 
-          <Table className="max-h-[200px]">
+        <div className="grow overflow-auto w-full"> 
+          <Table className="">
             <ItemTableHeader table={table} />
             <ItemTableBody table={table} />
           </Table>
@@ -218,7 +219,7 @@ const ItemTable: React.FC<ItemTableProps> = () => {
             display: "flex", // Use flexbox for layout
             flexDirection: "column", // Arrange children vertically
           }}
-          className='opacity-90  bg-dark-muted'
+          className='bg-secondary-muted/95 backdrop-blur-md border-0'
         >
           <DialogHeader>
             <DialogTitle>Create New Items</DialogTitle>

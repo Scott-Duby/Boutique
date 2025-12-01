@@ -7,7 +7,7 @@ import {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-} from "@/components/@shadcn/ui/pagination";
+} from "../../components/@shadcn/ui/pagination";
 
 interface PaginatorProps {
   currentPage: number;
